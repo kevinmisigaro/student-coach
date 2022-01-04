@@ -70,6 +70,8 @@ Route::prefix('dashboard')->group(function () {
     Route::get('coaches',[DashboardController::class,'coaches']);
     Route::get('jobs',[DashboardController::class,'jobs']);
 
+    Route::post('university/create',[UniversityController::class,'store']);
+
     Route::post('job/store',[JobController::class,'store']);
     Route::get('job/delete/{id}',[JobController::class,'destroy']);
 });

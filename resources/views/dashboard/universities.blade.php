@@ -24,7 +24,7 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="post">
+                        <form action="/dashboard/university/create" method="post">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="">University name</label>
