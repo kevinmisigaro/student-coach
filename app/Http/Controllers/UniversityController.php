@@ -22,7 +22,7 @@ class UniversityController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'city' => 'required',
-            'description' => 'required'
+            'body' => 'required'
         ]);
 
         if ($validator->fails()) {
