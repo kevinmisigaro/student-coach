@@ -18,11 +18,11 @@ class ChatController extends Controller
     }
 
     public function chatwithStudent($studentID){
-        if (!Auth::check()) {
-            session()->flash('error', 'Please login first');
-            return back();
-        }
+        // if (!Auth::check()) {
+        //     session()->flash('error', 'Please login first');
+        //     return back();
+        // }
 
-        return redirect('/chat/student/'.$studentID);
+        return redirect('/chat/coach/'.$studentID);
     }
 }

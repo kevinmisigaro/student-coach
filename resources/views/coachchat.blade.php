@@ -17,8 +17,7 @@
                 <img src="{{ asset('images/businessavatar.jpg') }}" style="max-width: 150px" class="rounded-circle" alt="..." />
                 <br /><br>
                 <p>
-                    <strong>{{ $coach->name }}</strong> <br><br>
-                    {{ $coach->city->name }}, <br> {{ $coach->city->country->name }}
+                    {{ $student->name }} <br>
                 </p>
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" wire:poll>
@@ -30,7 +29,7 @@
                         <div class="row">
                             <div class="col-md-6 offset-md-6 mb-2 d-flex row justify-content-end">
                                 <div class="reciever text-white rounded">
-                                    {{ $text->message }}
+                                    <p>{{ $text->message }}</p>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +37,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-2 d-flex row justify-content-start">
                                 <div class="sender text-dark rounded">
-                                    {{ $text->message }}
+                                    <p>{{ $text->message }}</p>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +56,7 @@
                             Send
                         </button>
                     </div>
-                </form>                
+                </form> 
             </div>
         </div>
     </div>

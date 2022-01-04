@@ -14,10 +14,12 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
+            'password' => 'required'
         ]);
 
         if ($validator->fails()) {
-          //
+            session()->flash('error', 'Please enter all details');
+            return back();
         }
 
         User::create([
@@ -26,7 +28,12 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return \redirect('/dashboard');
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            return \redirect('/dashboard');
+        }
+
+        session()->flash('error', 'Registration failed.');
+        return back();
     }
 
     public function login(Request $request){
@@ -40,7 +47,6 @@ class AuthController extends Controller
         }
 
         session()->flash('error', 'Incorrect email or password');
-
         return back();
     }
 

@@ -68,9 +68,9 @@
 
     @if (\Illuminate\Support\Facades\Auth::user()->role == 3)
     <li class="nav-item">
-        <a class="nav-link" href="/dashboard/students">
+        <a class="nav-link" href="/dashboard/consultations">
             <i class="far fa-fw fa-address-card"></i>
-            <span>Students</span>
+            <span>Consultations</span>
         </a>
     </li>
     @endif

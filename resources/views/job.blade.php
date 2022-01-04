@@ -10,7 +10,7 @@
         @endif
 
         @if (session()->has('success'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -57,11 +57,20 @@
             <div class='col-md-8'>
 
                 <div class='mb-3'>
+                    <h5>Deadline date:</h5>
+                    <p style="text-align:left">
+                        {{ $job->deadline_date }}
+                    </p>
+                </div>
+
+                <div class='mb-3'>
                     <h5>About the company:</h5>
                     <p style="text-align:left">
                         {{ $job->description }}
                     </p>
                 </div>
+
+
 
                 {{-- <div class='mb-5'>
                     <h5>Requirements:</h5>

@@ -58,7 +58,7 @@
                     <div class='card' style="width: 100%">
 
                         <div class='card-body text-center'>
-                            <img src="{{ asset('images/tutor2.jpg') }}" style="width: 150px; height: 150px"
+                            <img src="{{ asset('images/businessavatar.jpg') }}" style="width: 150px; height: 150px"
                                 class='rounded-circle mb-2' alt='...' />
 
                             <h4>

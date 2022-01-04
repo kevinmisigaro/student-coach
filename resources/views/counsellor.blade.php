@@ -11,7 +11,7 @@
 
         <div class="row my-5">
             <div class="col-md-4 text-center">
-                <img src="{{ asset('images/tutor2.jpg') }}" style="max-width: 300px" class="rounded-circle" alt="..." />
+                <img src="{{ asset('images/businessavatar.jpg') }}" style="max-width: 200px" class="rounded-circle" alt="..." />
                 <br /><br>
                 <p>
                     {{ $coach->city->name }}, <br> {{ $coach->city->country->name }}
