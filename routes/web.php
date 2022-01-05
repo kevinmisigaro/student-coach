@@ -8,6 +8,7 @@ use App\Http\Controllers\CoachController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\PostController;
 use App\Http\Livewire\ChatRoom;
 use App\Http\Livewire\CoachChatRoom;
 
@@ -64,6 +65,11 @@ Route::get('logout',[AuthController::class,'logout']);
 Route::get('beginSession/{coachID}',[ChatController::class,'chat']);
 Route::get('chat/{coachID}', ChatRoom::class);
 Route::get('chat/coach/{studentID}', CoachChatRoom::class);
+
+Route::get('forum',[PostController::class, 'index']);
+Route::post('forum/create',[PostController::class,'store']);
+Route::get('post/{id}',[PostController::class,'post']);
+Route::post('post/comment/{id}',[PostController::class,'comment']);
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);

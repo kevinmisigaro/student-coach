@@ -61,6 +61,11 @@
                             University Partners
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/forum" class="nav-link">
+                            Forum
+                        </a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
