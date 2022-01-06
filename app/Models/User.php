@@ -46,4 +46,12 @@ class User extends Authenticatable
     public function city(){
         return $this->belongsTo(City::class);
     }
+
+    public function groupOwner(){
+        $this->hasOne(Group::class);
+    }
+
+    public function groups(){
+        return $this->belongsToMany(Group::class);
+    }
 }

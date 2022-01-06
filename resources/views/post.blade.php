@@ -30,7 +30,7 @@
                     <form action="/post/comment/{{ $post->id }}" method="post">
                         @csrf
                         <div class="form-group mb-2">
-                            <textarea name="comment" cols="100%" rows="4" placeholder="Enter comment..."
+                            <textarea name="comment" cols="100%" rows="3" placeholder="Enter comment..."
                                 class="form-control"></textarea>
                         </div>
                         <div class="form-group mb-3">
@@ -41,10 +41,14 @@
                     </form>
                 </div>
 
+                <hr>
+
                 <div>
                     @if (isset($post->comments))
                     @foreach ($post->comments as $comment)
                     <div class="alert alert-dark mb-2" role="alert">
+                        <small><u>{{ $comment->user->name }}</u></small>
+                        <br>
                         {{ $comment->message }}
                     </div>
                     @endforeach

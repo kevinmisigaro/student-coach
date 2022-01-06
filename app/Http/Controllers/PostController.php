@@ -7,12 +7,14 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Comment;
+use App\Models\Group;
 
 class PostController extends Controller
 {
     public function index(){
         $posts = Post::get();
-        return view('forum', \compact('posts'));
+        $groups = Group::get();
+        return view('forum', \compact('posts','groups'));
     }
 
     public function post($id){

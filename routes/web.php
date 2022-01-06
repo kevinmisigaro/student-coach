@@ -9,6 +9,7 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\GroupController;
 use App\Http\Livewire\ChatRoom;
 use App\Http\Livewire\CoachChatRoom;
 
@@ -70,6 +71,13 @@ Route::get('forum',[PostController::class, 'index']);
 Route::post('forum/create',[PostController::class,'store']);
 Route::get('post/{id}',[PostController::class,'post']);
 Route::post('post/comment/{id}',[PostController::class,'comment']);
+
+Route::prefix('group')->group(function(){
+    Route::get('/',[GroupController::class,'index']);
+    Route::post('store',[GroupController::class,'store']);
+    Route::get('singlegroup/{id}',[GroupController::class,'display']);
+    Route::post('post/{id}',[GroupController::class,'post']);
+});
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
