@@ -1,5 +1,5 @@
 @component('layouts.main')
-<div class="container-fluid">
+<div class="container-fluid" style="background:#a5cae4; height: 100vh">
     <div class="container">
 
         @if (session()->has('error'))
@@ -16,7 +16,7 @@
         </div>
         @endif
 
-        <div class="text-center my-3">
+        <div class="text-center py-3">
             <h3><strong>{{ $group->name }}</strong></h3>
         </div>
         <br>
@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <div class="card" style="width: 100%">
+                <div class="card" style="width: 100%; background:#f4fcfc">
                     <div class="card-body">
                         {{ $group->description }}
                         <hr>
@@ -33,7 +33,7 @@
                 </div>
                 <br>
                 <div class="">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button class="btn btn-primary" style="background:#05547f" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Create post
                     </button>
 
@@ -102,9 +102,6 @@
                             <div>
                                 <small>Author: {{ $post->user->name }}</small>
                             </div>
-                            <div class="d-flex row justify-content-start mt-2 px-2">
-                                <span class="badge rounded-pill bg-success me-2" style="width: 80px">#Covid-19</span>
-                            </div>
                         </div>
                     </a>
                     <!--- card--->
@@ -121,6 +118,11 @@
                 <div class="card" style="width: 100%">
                     <div class="card-body">
                         Members: {{ count($group->members) }}
+                        <br>
+                        <hr>
+                        {{-- <button class="btn btn-primary">
+                            Be a member
+                        </button> --}}
                     </div>
                 </div>
             </div>

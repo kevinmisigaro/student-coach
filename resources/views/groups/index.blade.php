@@ -1,8 +1,8 @@
 @component('layouts.main')
-<div class="container-fluid">
+<div class="container-fluid" style="background:#a5cae4; height: 100vh">
     <div class="container">
 
-        <div class="text-center my-3">
+        <div class="text-center py-3">
             <h3><strong>Forum Groups</strong></h3>
         </div>
 
@@ -12,7 +12,7 @@
                 @if (count($groups)>0)
                     @foreach ($groups as $group)
                     <a href="/group/singlegroup/{{ $group->id }}" style="text-decoration: none; color: black">
-                        <div class="card shadow mb-3" style="width: 100%">
+                        <div class="card shadow mb-3" style="width: 100%; background:#f4fcfc">
                             <div class="card-body row">
                                 <div class="col-md-9">
                                     <p>
