@@ -17,7 +17,7 @@
         @endif
 
         <div class="text-center py-3">
-            <h3><strong>Student Coach Forum</strong></h3>
+            <h3><strong>Community</strong></h3>
         </div>
 
         <div class="row">

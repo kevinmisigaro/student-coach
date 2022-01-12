@@ -1,22 +1,46 @@
 @component('layouts.main')
-<div class='mt-3 container-fluid'>
+<div class='container-fluid py-5 mt-3'>
     <div class='container'>
-        <h4>
-            Work with Us
-        </h4>
-        <br/>
-        <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+
+        <h2>
+            Counsellors
+        </h2>
+
+        <br />
+
+        <div class='row'>
+            @if (count(\App\Models\User::where('role', 3)->get()) > 0)
+            @foreach (\App\Models\User::where('role', 3)->get() as $coach)
+            <div class='col-md-3 mb-3 text-center'>
+                <a href="/counsellor/{{ $coach->id }}" style="text-decoration: none; color: black">
+                    <div class='card' style="width: 100%">
+
+                        <div class='card-body text-center'>
+                            <img src="{{ asset('images/businessavatar.jpg') }}" style="width: 150px; height: 150px"
+                                class='rounded-circle mb-2' alt='...' />
+
+                            <h4>
+                                <strong>
+                                    {{ $coach->name }}
+                                </strong>
+                            </h4>
+                            <p>
+                                {{ $coach->city->name }}
+                            </p>
+
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+            @endforeach
+            @else
+            <div class="col-md-12 text-center">
+                <p>No coaches at this time</p>
+            </div>
+            @endif
+        </div>
+
     </div>
 </div>
 @endcomponent

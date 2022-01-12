@@ -27,7 +27,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a href="/" class="navbar-brand">
-                Student Coach
+                <img src="{{ asset('images/coachlogo2.png') }}" style="max-width: 200px" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
