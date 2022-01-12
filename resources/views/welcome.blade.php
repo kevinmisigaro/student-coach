@@ -36,9 +36,9 @@
                             </i>
                         </h4>
                         <br>
-                        <button class="btn btn-primary btn-lg px-5">
+                        <a href="/register" class="btn btn-primary btn-lg px-5">
                             Get Started
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -95,29 +95,33 @@
 <div class="container-fluid py-5" style="background: #f5f5f5">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-12 text-center mb-3">
+            <div class="col-md-6 col-sm-12 text-center mb-3">
                 <img src="{{ asset('images/students-sitting.jpg') }}" alt="" class="img-fluid">
             </div>
-            <div class="col-md-8 col-sm-12 mb-3">
-                <h3>
-                    <b>Who we are</b>
-                </h3>
-                <p class="text-muted" style="text-align: justify">
-                    We provide curated communities and coaching for students and young professionals.
-                    For many students, accessing relevant information for academic, study abroad and career success can
-                    often be
-                    confusing. Does this sound like you or someone
-                    <br><br>
-                    At the Student Coach, we believe in the power of peer-mentoring by connecting students, graduates,
-                    and young
-                    professionals to support academic, professional and career aspirations.
-                <br><br>
-                    We are the premier learning and development community amplifying opportunities through curated,
-                    interactive
-                    communities and our dedicated coaching.
-                <br>
-                    We’ve been there, done that and want to be part of your success story.
-                </p> 
+            <div class="col-md-6 col-sm-12 mb-3">
+                <div class="ms-3">
+                    <h3>
+                        <b>Who we are</b>
+                    </h3>
+                    <p class="text-muted" style="text-align: justify">
+                        We provide curated communities and coaching for students and young professionals.
+                        For many students, accessing relevant information for academic, study abroad and career success
+                        can
+                        often be
+                        confusing. Does this sound like you or someone
+                        <br><br>
+                        At the Student Coach, we believe in the power of peer-mentoring by connecting students,
+                        graduates,
+                        and young
+                        professionals to support academic, professional and career aspirations.
+                        <br><br>
+                        We are the premier learning and development community amplifying opportunities through curated,
+                        interactive
+                        communities and our dedicated coaching.
+                        <br>
+                        We’ve been there, done that and want to be part of your success story.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -135,7 +139,7 @@
         <br>
 
         <div class="row mt-5">
-            <div class="col-md-4 mb-3 text-center">
+            <div class="col-md-6 mb-3 text-center">
                 <h4>
                     Community
                 </h4>
@@ -144,18 +148,25 @@
                     libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
                     rerum deserunt modi?
                 </p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    View community
+                </a>
             </div>
 
-            <div class="col-md-4 mb-3 text-center">
+            <div class="col-md-6 mb-5 text-center">
                 <h4>
                     Coaching
                 </h4>
                 <p>
-                    Our coaches are experienced professionals in career coaching, academia and study mobility including trailblazers with notable achievements as former international students in the UK and Canada.
+                    Our coaches are experienced professionals in career coaching, academia and study mobility including
+                    trailblazers with notable achievements as former international students in the UK and Canada.
                 </p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    View coaches
+                </a>
             </div>
 
-            <div class="col-md-4 mb-3 text-center">
+            <div class="col-md-6 mb-3 text-center">
                 <h4>
                     Events
                 </h4>
@@ -164,15 +175,23 @@
                     libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
                     rerum deserunt modi?
                 </p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    View events
+                </a>
             </div>
 
-            <div class="col-md-4 mb-3 text-center">
+            <div class="col-md-6 mb-3 text-center">
                 <h4>
                     Unisearch
                 </h4>
                 <p>
-                    Confused by so many options on where to study in the UK or Canada? Do you have specific criteria and would like to narrow down the options to suit your unique individual circumstance? We’ve got you covered with Unisearch, we call it our very own AirBnB for the savvy student.
+                    Confused by so many options on where to study in the UK or Canada? Do you have specific criteria and
+                    would like to narrow down the options to suit your unique individual circumstance? We’ve got you
+                    covered with Unisearch, we call it our very own AirBnB for the savvy student.
                 </p>
+                <a href="#" class="btn btn-primary btn-sm">
+                    View universities
+                </a>
             </div>
 
         </div>
@@ -208,9 +227,9 @@
                 <h1>Join millions of fellow students online</h1>
             </div>
             <div class="col-md-3 text-center mb-3">
-                <button class="btn btn-light mt-2">
+                <a href="/register" class="btn btn-light mt-2">
                     Get Started
-                </button>
+                </a>
             </div>
         </div>
     </div>
