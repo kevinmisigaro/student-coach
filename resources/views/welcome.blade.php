@@ -137,7 +137,7 @@
         <div class="row mt-5">
             <div class="col-md-4 mb-3 text-center">
                 <h4>
-                    Online Community
+                    Community
                 </h4>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis tenetur quaerat illum
@@ -148,12 +148,10 @@
 
             <div class="col-md-4 mb-3 text-center">
                 <h4>
-                    Groups
+                    Coaching
                 </h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis tenetur quaerat illum
-                    libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
-                    rerum deserunt modi?
+                    Our coaches are experienced professionals in career coaching, academia and study mobility including trailblazers with notable achievements as former international students in the UK and Canada.
                 </p>
             </div>
 
@@ -170,34 +168,10 @@
 
             <div class="col-md-4 mb-3 text-center">
                 <h4>
-                    Online Community
+                    Unisearch
                 </h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis tenetur quaerat illum
-                    libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
-                    rerum deserunt modi?
-                </p>
-            </div>
-
-            <div class="col-md-4 mb-3 text-center">
-                <h4>
-                    Online Community
-                </h4>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis tenetur quaerat illum
-                    libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
-                    rerum deserunt modi?
-                </p>
-            </div>
-
-            <div class="col-md-4 mb-3 text-center">
-                <h4>
-                    Online Community
-                </h4>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis tenetur quaerat illum
-                    libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
-                    rerum deserunt modi?
+                    Confused by so many options on where to study in the UK or Canada? Do you have specific criteria and would like to narrow down the options to suit your unique individual circumstance? We’ve got you covered with Unisearch, we call it our very own AirBnB for the savvy student.
                 </p>
             </div>
 
