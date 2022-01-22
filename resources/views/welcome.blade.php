@@ -97,7 +97,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-12 text-center mb-3">
-                <img src="{{ asset('images/students-sitting.jpg') }}" alt="" class="img-fluid">
+                <img src="{{ asset('images/students-suits.jpg') }}" alt="" class="img-fluid">
             </div>
             <div class="col-md-6 col-sm-12 mb-3">
                 <div class="ms-3">
@@ -133,7 +133,7 @@
     <div class="container">
         <div class="text-center">
             <h2>
-                <b>Why Student Coach</b>
+                <u><b>Why Student Coach?</b></u>
             </h2>
         </div>
 
