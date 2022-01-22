@@ -102,7 +102,7 @@
         {{ $slot }}
     </div>
 
-    <div class='footer bg-dark py-3 fixed-bottom'>
+    <div class='footer bg-dark py-3'>
         <div class="container">
             <p class='text-white'>
                 Copyright &copy; Student Coach | {{ date("Y") }} 

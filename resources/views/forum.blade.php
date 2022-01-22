@@ -66,11 +66,11 @@
                 <!--- card--->
                 <a href="/post/{{ $post->id }}" style="text-decoration: none; color: black">
                    
-                <div class="card p-3 shadow mb-2" style="width: 90%;">
+                <div class="card px-3 py-2 shadow mb-2" style="width: 90%;">
                     <div class="card-body row">
                         <div class="col-md-9">
                             <div class="d-flex flex-row justify-content-start">
-                                <img src="{{ asset('images/businessavatar.jpg') }}" style="max-width: 100px; border: 1px solid black" class="rounded-circle">
+                                <img src="{{ asset('images/businessavatar.jpg') }}" style="width: 60px; height: 60px; border: 1px solid black" class="rounded-circle">
                                 <div class="ms-4">
                                     <h5>
                                         <strong>{{ $post->title }}</strong>

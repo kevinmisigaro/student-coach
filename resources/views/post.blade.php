@@ -1,14 +1,17 @@
 @component('layouts.main')
-<div class="container-fluid pt-3" style="background:#a5cae4; height: 100vh">
+<div class="container-fluid pt-3 pb-5" style="background:#f2f7f9;">
     <div class="container">
         <div class="row">
             <div class="col-md-9">
 
-                <div class="card shadow my-3" style="width: 100%; background:#f4fcfc">
+                <div class="card shadow my-3" style="width: 100%;">
                     <div class="card-body text-center">
                         <h4>
                             <b>{{ $post->title }}</b>
                         </h4>
+                        @if ($post->image != null)
+                            <img src="{{ env('APP_URL') }}/{{ $post->image }}" class="img-fluid" alt="">
+                        @endif
                         <div class="row mt-3">
                             <div class="col-md-6 text-center">
                                 <small>{{ $post->user->name }}</small>

@@ -1,5 +1,5 @@
 @component('layouts.main')
-<div class="container-fluid" style="background:#a5cae4; height: 100vh">
+<div class="container-fluid" style="background:#f2f7f9;">
     <div class="container">
 
         @if (session()->has('error'))
@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <div class="card" style="width: 100%; background:#f4fcfc">
+                <div class="card" style="width: 100%">
                     <div class="card-body">
                         {{ $group->description }}
                         <hr>
