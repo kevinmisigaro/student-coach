@@ -21,7 +21,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'bio', 'role', 'phone', 'avatar', 'city_id'
+        'bio', 
+        'role', 
+        'phone', 
+        'avatar', 
+        'city_id'
     ];
 
     /**
@@ -53,5 +57,13 @@ class User extends Authenticatable
 
     public function groups(){
         return $this->belongsToMany(Group::class);
+    }
+
+    public function events(){
+        return $this->belongsToMany(Event::class,'event_attendees','user_id','event_id');
+    }
+
+    public function jobsApplied(){
+        return $this->belongsToMany(Job::class,'applicants','user_id','job_id');
     }
 }

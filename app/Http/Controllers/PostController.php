@@ -61,6 +61,21 @@ class PostController extends Controller
             return back();
         }
 
+        if($request->hasFile('image')){
+            $filename = time().'.'.$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('images/forum'), $filename);
+
+            Post::create([
+                'title' => $request->title,
+                'body' => $request->body,
+                'user_id' => Auth::id(),
+                'image' =>  "images/forum/$filename"
+            ]);
+
+            session()->flash('success','Post successfully added!');
+            return back();
+        }
+
         Post::create([
             'title' => $request->title,
             'body' => $request->body,

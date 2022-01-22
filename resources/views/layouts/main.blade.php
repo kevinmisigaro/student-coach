@@ -41,29 +41,30 @@
                             Home
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">
-                            About
-                        </a>
-                    </li>
-                    <li class="nav-item">
+                    
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="/jobs">
                             Jobs
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a href="/partner" class="nav-link">
                             Work with us
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/events">
+                            Events
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item">
                         <a href="/universities" class="nav-link">
                             University Partners
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a href="/forum" class="nav-link">
-                            Forum
+                            Community
                         </a>
                     </li>
                     <li class="nav-item dropdown">
@@ -101,10 +102,12 @@
         {{ $slot }}
     </div>
 
-    <div class='footer bg-dark text-center py-3 fixed-bottom"'>
-        <p class='text-white'>
-            {{ date("Y") }} | Student Coach
-        </p>
+    <div class='footer bg-dark py-3 fixed-bottom'>
+        <div class="container">
+            <p class='text-white'>
+                Copyright &copy; Student Coach | {{ date("Y") }} 
+           </p>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

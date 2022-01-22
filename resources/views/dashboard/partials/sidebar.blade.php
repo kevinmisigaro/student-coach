@@ -21,12 +21,12 @@
     <hr class="sidebar-divider">
 
     @if (\Illuminate\Support\Facades\Auth::user()->role == 1)
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="/dashboard/universities">
             <i class="far fa-fw fa-address-card"></i>
             <span>Universities</span>
         </a>
-    </li>
+    </li> --}}
 
     <li class="nav-item">
         <a class="nav-link" href="/dashboard/coaches">
@@ -36,16 +36,30 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="far fa-fw fa-address-card"></i>
+            <span>Communities</span>
+        </a>
+    </li>
+
+    {{-- <li class="nav-item">
         <a class="nav-link" href="/dashboard/jobs">
             <i class="far fa-fw fa-address-card"></i>
             <span>Jobs</span>
         </a>
-    </li>
+    </li> --}}
 
     <li class="nav-item">
         <a class="nav-link" href="/dashboard/students">
             <i class="far fa-fw fa-address-card"></i>
             <span>Students</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard/events">
+            <i class="far fa-fw fa-address-card"></i>
+            <span>Events</span>
         </a>
     </li>
     @endif

@@ -16,4 +16,8 @@ class Job extends Model
     public function city(){
         return $this->belongsTo(City::class);
     }
+
+    public function applicants(){
+        return $this->belongsToMany(User::class,'applicants','job_id','user_id')->withPivot('accepted');
+    }
 }

@@ -2,6 +2,12 @@
 <div class='container-fluid py-5 mt-3'>
     <div class='container'>
 
+        <p>
+            Our coaches are experienced professionals in career coaching, academia and study mobility including trailblazers with notable achievements as former international students in the UK and Canada.
+        </p>
+
+        <br>
+
         <h2>
             Counsellors
         </h2>

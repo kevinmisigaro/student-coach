@@ -1,5 +1,5 @@
 @component('layouts.main')
-<div class="container-fluid" style="background:#a5cae4; height: 100vh">
+<div class="container-fluid" style="background:#f2f7f9; height: 100vh">
     <div class="container">
 
         @if (session()->has('error'))
@@ -16,18 +16,9 @@
         </div>
         @endif
 
-        <div class="text-center py-3">
-            <h3><strong>Community</strong></h3>
-        </div>
 
         <div class="row">
             <div class="col-md-9 mt-3">
-
-                <div class="d-grid mb-3">
-                    <button class="btn btn-primary" style="background:#05547f" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Create post
-                    </button>
-                </div>
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -42,11 +33,16 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="/forum/create" method="post">
+                                <form action="/forum/create" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group mb-2">
                                         <label for="">Title</label>
                                         <input type="text" name="title" class="form-control">
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <label for="">Image</label>
+                                        <input type="file" name="image" class="form-control">
+                                        <small>This is optional</small>
                                     </div>
                                     <div class="form-group mb-4">
                                         <label for="">Content</label>
@@ -69,33 +65,36 @@
                 @foreach ($posts as $post)
                 <!--- card--->
                 <a href="/post/{{ $post->id }}" style="text-decoration: none; color: black">
-                    <div class="card p-3 shadow mb-2" style="width: 100%; background:#f4fcfc">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <h5>
-                                    <strong>{{ $post->title }}</strong>
-                                </h5>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <p>
-                                    @if (isset($post->comments))
-                                    Comments: {{ count($post->comments) }}
-                                    @else
-                                    Comments: 0
-                                    @endif
-                                </p>
-                            </div>
-                            <div class="col-md-2">
-                                {{ $post->created_at->diffForHumans() }}
+                   
+                <div class="card p-3 shadow mb-2" style="width: 90%;">
+                    <div class="card-body row">
+                        <div class="col-md-9">
+                            <div class="d-flex flex-row justify-content-start">
+                                <img src="{{ asset('images/businessavatar.jpg') }}" style="max-width: 100px; border: 1px solid black" class="rounded-circle">
+                                <div class="ms-4">
+                                    <h5>
+                                        <strong>{{ $post->title }}</strong>
+                                    </h5>
+                                    <p>
+                                        {{ \Illuminate\Support\Str::limit($post->body, 30, '...'); }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <small>Author: {{ $post->user->name }}</small>
+                        <div class="col-md-3 text-center">
+                            <small>{{ $post->created_at->diffForHumans() }}</small>
+                            <br><br>
+                            <p>
+                                @if (isset($post->comments))
+                                {{ count($post->comments) }} comments
+                                @else
+                                0 comments
+                                @endif
+                            </p>
+                            
                         </div>
-                        {{-- <div class="d-flex row justify-content-start mt-2 px-2">
-                            <span class="badge rounded-pill bg-success me-2" style="width: 80px">#Covid-19</span>
-                        </div> --}}
                     </div>
+                </div>
                 </a>
                 <!--- card--->
                 @endforeach
@@ -108,6 +107,13 @@
 
             </div>
             <div class="col-md-3">
+                <div class="d-grid mb-3">
+                    <button class="btn btn-primary" style="background:#05547f" type="button" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Start New Discussion
+                    </button>
+                </div>
+
                 <div class="card" style="width: 100%">
                     <div class="card-body">
                         <h4>Groups</h4>
@@ -117,22 +123,22 @@
                         <br>
                         <ul>
                             @foreach ($groups as $group)
-                                <li>
-                                    {{ $group->name }}
-                                </li>
+                            <li>
+                                {{ $group->name }}
+                            </li>
                             @endforeach
                         </ul>
                         @else
                         <div class="alert alert-info mt-2 text-center" role="alert">
                             No groups
-                        </div> 
+                        </div>
                         @endif
 
                         <br>
                         <div class="d-grid gap-2">
-                            <button class="btn btn-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#createGroupModal">Create group</button>
-                            <a class="btn btn-outline-primary" href="/group" >View groups</a>
+                            {{-- <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                                data-bs-target="#createGroupModal">Create group</button> --}}
+                            <a class="btn btn-outline-primary" href="/group">View groups</a>
                         </div>
 
                         <!-- Create group Modal -->
@@ -153,8 +159,8 @@
                                                     class="form-control">
                                             </div>
                                             <div class="form-group mb-4">
-                                                <textarea name="description" placeholder="Group description" cols="100%" rows="3"
-                                                    class="form-control"></textarea>
+                                                <textarea name="description" placeholder="Group description" cols="100%"
+                                                    rows="3" class="form-control"></textarea>
                                             </div>
                                             <div class="form-group mb-2 d-grid">
                                                 <button class="btn btn-success">Create</button>

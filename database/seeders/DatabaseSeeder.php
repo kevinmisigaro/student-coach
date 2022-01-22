@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             StudentSeeder::class,
             CoachSeeder::class,
             UniversitySeeder::class,
+            GroupSeeder::class
         ]);
     }
 }

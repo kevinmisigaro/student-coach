@@ -1,5 +1,5 @@
 @component('layouts.main')
-<div class="mt-5 container-fluid">
+<div class="pt-5 container-fluid" style="background: #f5f5f5; height: 100vh">
     <div class="container">
         <div class="d-flex row justify-content-center">
             <div class="card" style="width:30rem">

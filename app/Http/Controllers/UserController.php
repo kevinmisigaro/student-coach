@@ -22,4 +22,11 @@ class UserController extends Controller
     public function storeCoach(Request $request){
         
     }
+
+    public function delete($id){
+        $user = User::find($id);
+        $user->delete();
+        session()->flash('success','User deleted successfully');
+        return back();
+    }
 }

@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Applicant extends Model
+class EventAttendee extends Model
 {
     use HasFactory;
 
+    protected $table = 'event_attendees';
+
     protected $fillable = [
-        'user_id', 'job_id', 'accepted'
+        'event_id', 'user_id'
     ];
 }

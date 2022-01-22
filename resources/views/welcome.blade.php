@@ -67,18 +67,19 @@
 
             <div class="col-md-4 text-center">
                 <h3>
-                    <b>Stay Connected</b>
+                    <b>Join a community</b>
                 </h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, accusamus mollitia alias optio
                     expedita consectetur consequuntur exercitationem impedit excepturi atque minus, illo repudiandae.
                     Cum, soluta. Rem modi placeat dolorem totam?
                 </p>
+                <a href="/forum">Find a learning community</a>
             </div>
 
             <div class="col-md-4 text-center">
                 <h3>
-                    <b>Timely insight</b>
+                    <b>Connect to a coach</b>
                 </h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, accusamus mollitia alias optio
@@ -132,7 +133,7 @@
     <div class="container">
         <div class="text-center">
             <h2>
-                <b>Our Services</b>
+                <b>Why Student Coach</b>
             </h2>
         </div>
 
@@ -148,7 +149,7 @@
                     libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
                     rerum deserunt modi?
                 </p>
-                <a href="#" class="btn btn-primary btn-sm">
+                <a href="/forum" class="btn btn-primary btn-sm">
                     View community
                 </a>
             </div>
@@ -161,7 +162,7 @@
                     Our coaches are experienced professionals in career coaching, academia and study mobility including
                     trailblazers with notable achievements as former international students in the UK and Canada.
                 </p>
-                <a href="#" class="btn btn-primary btn-sm">
+                <a href="/partners" class="btn btn-primary btn-sm">
                     View coaches
                 </a>
             </div>
@@ -175,22 +176,8 @@
                     libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
                     rerum deserunt modi?
                 </p>
-                <a href="#" class="btn btn-primary btn-sm">
+                <a href="/events" class="btn btn-primary btn-sm">
                     View events
-                </a>
-            </div>
-
-            <div class="col-md-6 mb-3 text-center">
-                <h4>
-                    Unisearch
-                </h4>
-                <p>
-                    Confused by so many options on where to study in the UK or Canada? Do you have specific criteria and
-                    would like to narrow down the options to suit your unique individual circumstance? We’ve got you
-                    covered with Unisearch, we call it our very own AirBnB for the savvy student.
-                </p>
-                <a href="#" class="btn btn-primary btn-sm">
-                    View universities
                 </a>
             </div>
 
@@ -198,7 +185,7 @@
     </div>
 </div>
 
-<div class="container-fluid py-3" style="background: #f5f5f5">
+{{-- <div class="container-fluid py-3" style="background: #f5f5f5">
     <div class="container">
 
         <div class="text-center">
@@ -217,14 +204,14 @@
         </div>
 
     </div>
-</div>
+</div> --}}
 
-<div class="container-fluid py-3 bg-success">
+<div class="container-fluid py-5 bg-success">
     <div class="container py-5 text-white">
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-md-9 text-center mb-3">
-                <h1>Join millions of fellow students online</h1>
+                <h1>Join a global community of students online</h1>
             </div>
             <div class="col-md-3 text-center mb-3">
                 <a href="/register" class="btn btn-light mt-2">

@@ -12,6 +12,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\GroupController;
 use App\Http\Livewire\ChatRoom;
 use App\Http\Livewire\CoachChatRoom;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +80,10 @@ Route::prefix('group')->group(function(){
     Route::post('post/{id}',[GroupController::class,'post']);
 });
 
+Route::get('events', [EventController::class,'index']);
+Route::get('event/{id}',[EventController::class,'show']);
+Route::get('event/attend/{id}',[EventController::class,'attend']);
+
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
     Route::get('universities',[DashboardController::class,'universities']);
@@ -92,5 +97,16 @@ Route::prefix('dashboard')->group(function () {
 
     Route::post('job/store',[JobController::class,'store']);
     Route::get('job/delete/{id}',[JobController::class,'destroy']);
+
+    Route::prefix('events')->group(function(){
+        Route::get('/', function(){
+            $events = \App\Models\Event::where('event_date','>=', \Carbon\Carbon::now())->get();
+            return view('dashboard.events', compact('events'));
+        });
+        Route::post('store',[EventController::class,'store']);
+        Route::post('update/{id}',[EventController::class,'update']);
+        Route::delete('delete/(id}',[EventController::class,'delete']);
+    });
+
 });
 

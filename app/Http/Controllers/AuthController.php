@@ -28,7 +28,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return \redirect('/dashboard');
         }
 
