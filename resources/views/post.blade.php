@@ -10,7 +10,7 @@
                             <b>{{ $post->title }}</b>
                         </h4>
                         @if ($post->image != null)
-                            <img src="{{ env('APP_URL') }}/{{ $post->image }}" class="img-fluid" alt="">
+                            <img src="{{ env('APP_URL') }}/{{ $post->image }}" class="img-fluid" alt="...">
                         @endif
                         <div class="row mt-3">
                             <div class="col-md-6 text-center">

@@ -16,41 +16,104 @@
         width: 100%;
     }
 
+    .carousel {
+        height: 70vh;
+        background-position: center center;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 0.5;
+    }
+
+    #carousel1 {
+        background-image: url('{{ asset('images/students-standing.png')}}')
+    }
+
+    #carousel2 {
+        background-image: url('{{ asset('images/students-sitting.png')}}')
+    }
+
+    #carousel3 {
+        background-image: url('{{ asset('images/students-standing.png')}}')
+    }
+
 </style>
-<div class="container-fluid hero-top" style="background-image: url('{{ asset('images/students-standing.jpg')}}')">
-    <div class="container-fluid hero">
-        <div class="py-4">
 
-            <div class="row container">
-                <div class="col-md-6">
-                    <div class="mt-5">
-                        <h1>
-                            <strong>
-                                Slingshot your academic and career success
-                            </strong>
-                        </h1>
-                        <br>
-                        <h4>
-                            <i>
-                                Connecting learning and development communities for the savvy student
-                            </i>
-                        </h4>
-                        <br>
-                        <a href="/register" class="btn btn-primary btn-lg px-5">
-                            Get Started
-                        </a>
-                    </div>
+<div class="owl-carousel owl-theme owl-loaded">
+    <div class="owl-stage-outer">
+        <div class="owl-stage">
+            <div class="owl-item" id="carousel1">
+                <div class="container pt-5 text-white carousel" style="z-index:100">
+                    <h1>
+                        <strong>
+                            Slingshot your academic <br> and career success
+                        </strong>
+                    </h1>
+                    <br>
+                    <h4>
+                        <i>
+                            Connecting learning and development <br> communities for the savvy student
+                        </i>
+                    </h4>
+                    <br><br>
+                    <a href="/register" class="btn btn-primary btn-lg px-5">
+                        Get Started
+                    </a>
                 </div>
-
-                <div class="col-md-6">
-
+            </div>
+            <div class="owl-item" id="carousel2">
+                <div class="container pt-5 text-white carousel" style="z-index:100">
+                    <h1>
+                        <strong>
+                            Join a community
+                        </strong>
+                    </h1>
+                    <br>
+                    <h4>
+                        <i>
+                            Connecting learning and development <br> communities for the savvy student
+                        </i>
+                    </h4>
+                    <br><br>
+                    <a href="/forum" class="btn btn-primary btn-lg px-5">
+                        Find a learning community
+                    </a>
+                </div>
+            </div>
+            <div class="owl-item" id="carousel3">
+                <div class="container pt-5 text-white carousel" style="z-index:99999">
+                    <h1>
+                        <strong>
+                            Connect to a coach
+                        </strong>
+                    </h1>
+                    <br>
+                    <h4>
+                        <i>
+                            Connecting learning and development <br> communities for the savvy student
+                        </i>
+                    </h4>
+                    <br><br>
+                     <a href="/forum" class="btn btn-primary btn-lg px-5">
+                        Find a learning community
+                    </a> 
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
-<div class='container-fluid my-5'>
+{{-- <div class='container-fluid my-5'>
     <div class='container'>
 
         <div class="row">
@@ -90,7 +153,7 @@
         </div>
 
     </div>
-</div>
+</div> ----}}
 
 
 <div class="container-fluid py-5" style="background: #f5f5f5">
@@ -185,26 +248,26 @@
     </div>
 </div>
 
-{{-- <div class="container-fluid py-3" style="background: #f5f5f5">
+<div class="container-fluid py-5" style="background: #f5f5f5">
     <div class="container">
 
         <div class="text-center">
             <h3><b>Testimonial</b></h3>
             <br>
-            <img src="{{ asset('images/tutor-avatar.jpg') }}" class="rounded-circle" alt=".."
-                style="width: 180px; height:160px">
-            <p>
-                John Doe
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem illum, facilis autem, modi
-                commodi, totam culpa sint expedita tempora similique necessitatibus sapiente earum natus minima dolorum
-                blanditiis omnis vitae.
-            </p>
-        </div>
+            <img src="{{ asset('images/businessavatar.jpg') }}" style="width: 100px; height: 100px; border:1px solid black"
+                                class='rounded-circle mb-2' alt='...' />
+<p>
+    John Doe
+</p>
+<p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem illum, facilis autem, modi
+    commodi, totam culpa sint expedita tempora similique necessitatibus sapiente earum natus minima dolorum
+    blanditiis omnis vitae.
+</p>
+</div>
 
-    </div>
-</div> --}}
+</div>
+</div>
 
 <div class="container-fluid py-5 bg-success">
     <div class="container py-5 text-white">

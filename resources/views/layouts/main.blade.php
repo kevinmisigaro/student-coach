@@ -17,6 +17,8 @@
         }
 
     </style>
+    <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}">
     <title>
         Student coach
     </title>
@@ -41,12 +43,6 @@
                             Home
                         </a>
                     </li>
-                    
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="/jobs">
-                            Jobs
-                        </a>
-                    </li> --}}
                     <li class="nav-item">
                         <a href="/partner" class="nav-link">
                             Work with us
@@ -57,11 +53,6 @@
                             Events
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a href="/universities" class="nav-link">
-                            University Partners
-                        </a>
-                    </li> --}}
                     <li class="nav-item">
                         <a href="/forum" class="nav-link">
                             Community
@@ -105,14 +96,25 @@
     <div class='footer bg-dark py-3'>
         <div class="container">
             <p class='text-white'>
-                Copyright &copy; Student Coach | {{ date("Y") }} 
-           </p>
+                Copyright &copy; Student Coach | {{ date("Y") }}
+            </p>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                items: 1,
+                autoplay: true
+            });
+        });
+    </script>
+
     @livewireScripts
 </body>
 
