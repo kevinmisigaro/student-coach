@@ -9,17 +9,46 @@
 
         <p>
             Professional review, advice and support when you need it including:
-            Scholarship application
-            Personal statements
-            Student visa application
-            Pre-interview preparation
-            Career planning
-            Immigration advice
-            Grant applications
-            PhD proposals
-            Tests and courses
-            Eligibility evaluation
         </p>
+        <ul>
+            <li>Scholarship application
+                </li>
+                <li>
+                    Personal statements
+                
+                </li>
+                <li>
+                    Student visa application
+                    
+                </li>
+                <li>
+                    Pre-interview preparation
+                    
+                </li>
+                <li>
+                    Career planning
+                    
+                </li>
+                <li>
+                    Immigration advice
+                    
+                </li>
+                <li>
+                    Grant applications
+                    
+                </li>
+                <li>
+                    PhD proposals
+                    
+                </li>
+                <li>
+                    Tests and courses
+                    
+                </li>
+                <li>
+                    Eligibility evaluation 
+                </li>
+        </ul>
 
         <br>
 

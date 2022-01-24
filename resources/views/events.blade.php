@@ -5,13 +5,24 @@
             <b>Events</b>
         </h4>
         <br />
+        <form action="" method="post">
+            <div class="row mb-4">
+                <div class="col-md-4 mb-3"> 
+                    <input type="date" class="form-control">
+                    <br>
+                    <button class="btn btn-primary">
+                        Search via date
+                    </button>
+                </div>
+            </div>
+        </form>
         <div class="row">
             @if (count($events) > 0)
             @foreach ($events as $event)
             <div class="col-md-4 mb-3">
                 <a href="/event/{{ $event->id }}" style="text-decoration: none; color: black">
                     <div class="card" style="width:100%">
-                        <img src="{{ env('APP_URL') }}/{{ $event->image }}" class="card-img-top" alt="...">
+                        <img src="{{ env('APP_URL') }}/{{ $event->image }}" style="max-width: 300px" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5>
                                 <b>{{ $event->name }}</b>

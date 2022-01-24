@@ -14,7 +14,7 @@
                 <img src="{{ asset('images/businessavatar.jpg') }}" style="max-width: 200px; border: 1px solid black" class="rounded-circle" alt="..." />
                 <br /><br>
                 <p>
-                    {{ $coach->city->name }}, <br> {{ $coach->city->country->name }}
+                    {{ $coach->name }}
                 </p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Start chat

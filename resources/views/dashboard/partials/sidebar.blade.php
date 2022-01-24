@@ -72,12 +72,6 @@
         </a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="/dashboard/jobs">
-            <i class="far fa-fw fa-address-card"></i>
-            <span>Jobs</span>
-        </a>
-    </li>
     @endif
 
     @if (\Illuminate\Support\Facades\Auth::user()->role == 3)

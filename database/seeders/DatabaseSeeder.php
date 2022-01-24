@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CountrySeeder::class,
             AdminSeeder::class,
-            StudentSeeder::class,
+            // StudentSeeder::class,
             CoachSeeder::class,
-            UniversitySeeder::class,
+            // UniversitySeeder::class,
             GroupSeeder::class
         ]);
     }

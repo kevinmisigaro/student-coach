@@ -26,7 +26,7 @@
                             <label>Confirm Password</label>
                             <input type="password" name="confirm" class="form-control" />
                         </div>
-                        <div class="row mb-5">
+                        <div class="row mb-1">
                             <div class="col-md-6 mb-3 col-sm-12">
                                 <label for="">City</label>
                                 <input type="text" name="city" class="form-control">
@@ -36,6 +36,12 @@
                                 <input type="text" name="country" class="form-control">
                             </div>
                         </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Read our terms of service
+                            </label>
+                          </div>
                         <div class="form-group mb-3 d-grid">
                             <button type="submit" class="btn btn-success">
                                 Register

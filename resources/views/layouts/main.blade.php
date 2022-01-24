@@ -46,7 +46,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="/partner" class="nav-link">
-                            Work with us
+                            Book a coach
                         </a>
                     </li>
                     <li class="nav-item">
@@ -100,9 +100,14 @@
                 <p class='text-white'>
                     Copyright &copy; Student Coach | {{ date("Y") }}
                 </p>
-                <a href="/terms" style="color: white; text-decoration:none">
-                    Terms of reference
-                </a>
+                <div>
+                    <a href="/terms" style="color: white; text-decoration:none">
+                        Partner with us
+                    </a> <br>
+                    <a href="/terms" style="color: white; text-decoration:none">
+                        Terms of reference
+                    </a>
+                </div>
             </div>
         </div>
     </div>

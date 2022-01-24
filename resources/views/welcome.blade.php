@@ -80,8 +80,8 @@
                     <br>
                     <h4>
                         <i>
-                            Communities are a great way to connect with fellow students, <br> recent graduates and young professionals. Join a forum on a <br> topic of interest or create your own to start conversations with <br> like-minded people.
-                            Find your tribe, join or start a forum
+                            Communities are a great way to connect <br> with fellow students, recent graduates and <br>
+                            young professionals.
                         </i>
                     </h4>
                     <br><br>
@@ -100,7 +100,9 @@
                     <br>
                     <h4>
                         <i>
-                            Our coaches are trailblazers who have 'been there <br> and done that' and achieved success in their academic <br> and professional careers. They will review your history, <br> education, strengths, problem areas, and goals and build <br> your roadmap to success.
+                            Our coaches are trailblazers who have 'been there <br> and done that' and achieved success
+                            in their academic <br> and professional careers. They will review your history, <br>
+                            education, strengths, problem areas, and goals and build <br> your roadmap to success.
                         </i>
                     </h4>
 
@@ -201,22 +203,22 @@
         <br>
 
         <div class="row mt-5">
-            <div class="col-md-6 mb-5 text-center">
+            <div class="col-md-4 mb-5 text-center">
                 <i class="fa fa-users" aria-hidden="true" style="font-size: 35px"></i>
                 <h4>
                     Community
                 </h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis tenetur quaerat illum
-                    libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
-                    rerum deserunt modi?
+                    Join a forum on a topic of interest or create your own to start conversations with like-minded
+                    people.
+                    Find your tribe, join or start a forum
                 </p>
                 <a href="/forum" class="btn btn-primary btn-sm">
                     View community
                 </a>
             </div>
 
-            <div class="col-md-6 mb-5 text-center">
+            <div class="col-md-4 mb-5 text-center">
                 <i class="fa fa-graduation-cap" aria-hidden="true" style="font-size: 35px"></i>
                 <h4>
                     Coaching
@@ -230,15 +232,14 @@
                 </a>
             </div>
 
-            <div class="col-md-6 mb-3 text-center">
+            <div class="col-md-4 mb-3 text-center">
                 <i class="fa fa-calendar-o" aria-hidden="true" style="font-size: 35px"></i>
                 <h4>
                     Events
                 </h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, blanditiis tenetur quaerat illum
-                    libero, ipsum itaque laboriosam, quas dolorem placeat eum quam dolor similique quis fugit animi
-                    rerum deserunt modi?
+                    Sign up for our events to get insights on Postgraduate studies and how to get your student Visa
+                    without hassle, Access world class career advisory sessions.
                 </p>
                 <a href="/events" class="btn btn-primary btn-sm">
                     View events
@@ -255,19 +256,19 @@
         <div class="text-center">
             <h3><b>Testimonial</b></h3>
             <br>
-            <img src="{{ asset('images/businessavatar.jpg') }}" style="width: 100px; height: 100px; border:1px solid black"
-                                class='rounded-circle mb-2' alt='...' />
-<p>
-    John Doe
-</p>
-<p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem illum, facilis autem, modi
-    commodi, totam culpa sint expedita tempora similique necessitatibus sapiente earum natus minima dolorum
-    blanditiis omnis vitae.
-</p>
-</div>
+            <img src="{{ asset('images/businessavatar.jpg') }}"
+                style="width: 100px; height: 100px; border:1px solid black" class='rounded-circle mb-2' alt='...' />
+            <p>
+                John Doe
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem illum, facilis autem, modi
+                commodi, totam culpa sint expedita tempora similique necessitatibus sapiente earum natus minima dolorum
+                blanditiis omnis vitae.
+            </p>
+        </div>
 
-</div>
+    </div>
 </div>
 
 <div class="container-fluid bg-success" style="padding: 80px 0 50px 0">

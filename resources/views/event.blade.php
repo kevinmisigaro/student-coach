@@ -20,6 +20,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <img src="{{ env('APP_URL') }}/{{ $event->image }}" class="img-fluid" alt="...">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
                 </div>
                 <div class="col-md-6 p-4">
                     {{ \Carbon\Carbon::parse($event->event_date)->format('l, jS, F,y'); }}
@@ -31,7 +34,12 @@
                     <small>
                         <b>Location:</b> {{ $event->location }}
                      </small>
-                     <br>
+                     <br><br>
+                     <small>
+                         <b>Description:</b> <br>
+                         {{ $event->description }}
+                     </small>
+                     <br><br>
                      <small><b>Entrance:</b> Free</small>
                      <br><br>
                      <a href="/event/attend/{{ $event->id }}" class="btn btn-success">
