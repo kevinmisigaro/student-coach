@@ -20,9 +20,9 @@ class EventController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'date' => 'required',
-            'time' => 'required',
-            'image' => 'required',
+            'eventdate' => 'required',
+            'eventtime' => 'required',
+            'picture' => 'required',
             'location' => 'required',
             'description' => 'required'
         ]);
@@ -32,23 +32,30 @@ class EventController extends Controller
            return back();
         }
 
-        if($request->hasFile('image')){
-            $filename = time().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images/events'), $filename);
+        if($request->hasFile('picture')){
+            $filename = time().'.'.$request->picture->getClientOriginalExtension();
+            $request->picture->move(public_path('images/events'), $filename);
+
+            Event::create([
+                'name' => $request->name,
+                'event_date' => $request->eventdate,
+                'event_time' => $request->eventtime,
+                'image' => "images/events/$filename",
+                'location' => $request->location, 
+                'description' => $request->description,
+                'link' => $request->link
+            ]);
+    
+            session()->flash('success', 'Event created successfully');
+            return back();
         }
+        
+    }
 
-        Event::create([
-            'name' => $request->name,
-            'event_date' => $request->date,
-            'event_time' => $request->time,
-            'image' => "images/events/$filename",
-            'location' => $request->location, 
-            'description' => $request->description,
-            'link' => $request->link
-        ]);
+    public function viewAttendees($id){
+        $event = Event::where('id', $id)->with('attendees')->first();
 
-        session()->flash('success', 'Event created successfully');
-        return back();
+        return view('dashboard.attendees',compact('event'));
     }
 
     public function show($id){

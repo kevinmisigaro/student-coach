@@ -19,6 +19,8 @@ class StudentSeeder extends Seeder
             'name' => 'Eric Garcia',
             'email' => 'garcia@gmail.com', 
             'password' => Hash::make('Eric1234'),
+            'city' => 'Dar es Salaam',
+            'country' => 'Tanzania'
         ]);
 
     }

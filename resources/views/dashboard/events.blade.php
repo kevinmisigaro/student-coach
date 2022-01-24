@@ -16,7 +16,7 @@
 @endif
 
 @if (session()->has('error'))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
     {{ session('error') }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -47,46 +47,45 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="/dashboard/events/store" method="POST" enctype="multipart/form-data">
+                        <form action="/dashboard/events/store" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <label for="">Event name</label>
+                                    <label>Event name</label>
                                     <input type="text" name="name" class="form-control">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="">Event Location</label>
+                                    <label>Event Location</label>
                                     <input type="text" name="location" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <label for="">Event Time</label>
-                                    <input type="time" name="time" class="form-control">
+                                    <label>Event Time</label>
+                                    <input type="time" name="eventtime" class="form-control">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="">Event date</label>
-                                    <input type="date" name="date" class="form-control">
+                                    <label>Event date</label>
+                                    <input type="date" name="eventdate" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <label for="">Event Image</label>
-                                    <input type="file" name="image" class="form-control">
+                                    <label>Event Image</label>
+                                    <input type="file" name="picture" class="form-control">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="">Event Link</label>
+                                    <label>Event Link</label>
                                     <input type="text" name="link" class="form-control">
                                     <small>This is optional</small>
                                 </div>
                             </div>
 
                             <div class="form-group mb-4">
-                                <label for="">Event description</label>
-                                <textarea name="description" id="" cols="100%" rows="4"
-                                    class="form-control mb-3"></textarea>
+                                <label>Event description</label>
+                                <textarea name="description" cols="100%" rows="4" class="form-control mb-3"></textarea>
                                 <small>This is optional</small>
                             </div>
 
@@ -164,7 +163,16 @@
                         {{ $event->location }}
                     </td>
                     <td>
-
+                        <div class="dropdown">
+                            <a id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/dashboard/events/attendees/{{ $event->id }}">Attendees</a>
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="/dashboard/events/delete/{{ $event->id }}">Delete</a>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 @endforeach

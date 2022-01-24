@@ -3,16 +3,29 @@
     <div class='container'>
 
         <p>
-            Our coaches are experienced professionals in career coaching, academia and study mobility including trailblazers with notable achievements as former international students in the UK and Canada.
+            We offer a range of 1:1 coaching and group coaching to help you achieve your academic, professional and
+            career goals at home or abroad.
+        </p>
+
+        <p>
+            Professional review, advice and support when you need it including:
+            Scholarship application
+            Personal statements
+            Student visa application
+            Pre-interview preparation
+            Career planning
+            Immigration advice
+            Grant applications
+            PhD proposals
+            Tests and courses
+            Eligibility evaluation
         </p>
 
         <br>
 
-        <h2>
+        <h3>
             Counsellors
-        </h2>
-
-        <br />
+        </h3>
 
         <div class='row'>
             @if (count(\App\Models\User::where('role', 3)->get()) > 0)
@@ -22,8 +35,9 @@
                     <div class='card' style="width: 100%">
 
                         <div class='card-body text-center'>
-                            <img src="{{ asset('images/businessavatar.jpg') }}" style="width: 150px; height: 150px; border:1px solid black"
-                                class='rounded-circle mb-2' alt='...' />
+                            <img src="{{ asset('images/businessavatar.jpg') }}"
+                                style="width: 150px; height: 150px; border:1px solid black" class='rounded-circle mb-2'
+                                alt='...' />
 
                             <h4>
                                 <strong>

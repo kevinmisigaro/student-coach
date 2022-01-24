@@ -1,10 +1,9 @@
 @component('layouts.main')
 <div class="container-fluid py-5">
     <div class="container">
-        <h2>
-            Events
-        </h2>
-
+        <h4>
+            <b>Events</b>
+        </h4>
         <br />
         <div class="row">
             @if (count($events) > 0)
@@ -18,7 +17,7 @@
                                 <b>{{ $event->name }}</b>
                             </h5>
                             <small>
-                                {{ \Carbon\Carbon::parse($event->event_date)->format('l, jS, F,y'); }} at
+                                {{ \Carbon\Carbon::parse($event->event_date)->format('l, jS, F'); }} at
                                 {{ $event->event_time }}
                             </small>
                             <br>

@@ -25,7 +25,7 @@ class User extends Authenticatable
         'role', 
         'phone', 
         'avatar', 
-        'city_id'
+        'city', 'country'
     ];
 
     /**

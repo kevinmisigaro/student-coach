@@ -43,7 +43,7 @@
     }
 
     #carousel3 {
-        background-image: url('{{ asset('images/students-standing.png')}}')
+        background-image: url('{{ asset('images/teaching.png')}}')
     }
 
 </style>
@@ -80,7 +80,8 @@
                     <br>
                     <h4>
                         <i>
-                            Connecting learning and development <br> communities for the savvy student
+                            Communities are a great way to connect with fellow students, <br> recent graduates and young professionals. Join a forum on a <br> topic of interest or create your own to start conversations with <br> like-minded people.
+                            Find your tribe, join or start a forum
                         </i>
                     </h4>
                     <br><br>
@@ -99,13 +100,10 @@
                     <br>
                     <h4>
                         <i>
-                            Connecting learning and development <br> communities for the savvy student
+                            Our coaches are trailblazers who have 'been there <br> and done that' and achieved success in their academic <br> and professional careers. They will review your history, <br> education, strengths, problem areas, and goals and build <br> your roadmap to success.
                         </i>
                     </h4>
-                    <br><br>
-                     <a href="/forum" class="btn btn-primary btn-lg px-5">
-                        Find a learning community
-                    </a> 
+
                 </div>
             </div>
         </div>
@@ -203,7 +201,8 @@
         <br>
 
         <div class="row mt-5">
-            <div class="col-md-6 mb-3 text-center">
+            <div class="col-md-6 mb-5 text-center">
+                <i class="fa fa-users" aria-hidden="true" style="font-size: 35px"></i>
                 <h4>
                     Community
                 </h4>
@@ -218,6 +217,7 @@
             </div>
 
             <div class="col-md-6 mb-5 text-center">
+                <i class="fa fa-graduation-cap" aria-hidden="true" style="font-size: 35px"></i>
                 <h4>
                     Coaching
                 </h4>
@@ -225,12 +225,13 @@
                     Our coaches are experienced professionals in career coaching, academia and study mobility including
                     trailblazers with notable achievements as former international students in the UK and Canada.
                 </p>
-                <a href="/partners" class="btn btn-primary btn-sm">
+                <a href="/partner" class="btn btn-primary btn-sm">
                     View coaches
                 </a>
             </div>
 
             <div class="col-md-6 mb-3 text-center">
+                <i class="fa fa-calendar-o" aria-hidden="true" style="font-size: 35px"></i>
                 <h4>
                     Events
                 </h4>
@@ -269,12 +270,12 @@
 </div>
 </div>
 
-<div class="container-fluid py-5 bg-success">
-    <div class="container py-5 text-white">
+<div class="container-fluid bg-success" style="padding: 80px 0 50px 0">
+    <div class="container pt-1 text-white">
 
         <div class="row mb-3">
             <div class="col-md-9 text-center mb-3">
-                <h1>Join a global community of students online</h1>
+                <h3>Join a global community of students online</h3>
             </div>
             <div class="col-md-3 text-center mb-3">
                 <a href="/register" class="btn btn-light mt-2">
@@ -284,6 +285,4 @@
         </div>
     </div>
 </div>
-
-
 @endcomponent

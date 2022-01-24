@@ -84,6 +84,10 @@ Route::get('events', [EventController::class,'index']);
 Route::get('event/{id}',[EventController::class,'show']);
 Route::get('event/attend/{id}',[EventController::class,'attend']);
 
+Route::get('terms', function(){
+    return view('terms');
+});
+
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
     Route::get('universities',[DashboardController::class,'universities']);
@@ -103,9 +107,10 @@ Route::prefix('dashboard')->group(function () {
             $events = \App\Models\Event::where('event_date','>=', \Carbon\Carbon::now())->get();
             return view('dashboard.events', compact('events'));
         });
+        Route::get('attendees/{id}',[EventController::class,'viewAttendees']);
         Route::post('store',[EventController::class,'store']);
         Route::post('update/{id}',[EventController::class,'update']);
-        Route::delete('delete/(id}',[EventController::class,'delete']);
+        Route::delete('delete/{id}',[EventController::class,'delete']);
     });
 
 });

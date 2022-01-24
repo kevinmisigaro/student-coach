@@ -56,7 +56,7 @@
                     @if (isset($post->comments))
                     @foreach ($post->comments as $comment)
                     <div class="alert alert-dark mb-2" role="alert">
-                        <small><u>{{ $comment->user->name }}</u></small>
+                        <small><u>{{ $comment->user->name }}</u></small> &nbsp; <span style="font-size: 8pt">{{ $comment->created_at->diffForHumans() }}</span>
                         <br>
                         {{ $comment->message }}
                     </div>

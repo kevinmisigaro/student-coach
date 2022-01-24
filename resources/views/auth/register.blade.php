@@ -22,9 +22,19 @@
                             <label>Password</label>
                             <input type="password" name="password" class="form-control" />
                         </div>
-                        <div class="form-group mb-5" style="text-align:left">
+                        <div class="form-group mb-3" style="text-align:left">
                             <label>Confirm Password</label>
                             <input type="password" name="confirm" class="form-control" />
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-6 mb-3 col-sm-12">
+                                <label for="">City</label>
+                                <input type="text" name="city" class="form-control">
+                            </div>
+                            <div class="col-md-6 mb-3 col-sm-12">
+                                <label for="">Country</label>
+                                <input type="text" name="country" class="form-control">
+                            </div>
                         </div>
                         <div class="form-group mb-3 d-grid">
                             <button type="submit" class="btn btn-success">

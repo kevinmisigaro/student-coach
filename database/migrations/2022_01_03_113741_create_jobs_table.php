@@ -17,7 +17,8 @@ class CreateJobsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->foreignId('city_id')->constrained();
+            $table->string('city');
+            $table->string('country');
             $table->date('deadline_date');
             $table->timestamps();
         });
