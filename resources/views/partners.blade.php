@@ -74,7 +74,7 @@
                                 </strong>
                             </h4>
                             <p>
-                                {{ $coach->city->name }}
+                                {{ $coach->city }}, {{ $coach->country }}
                             </p>
 
                         </div>
