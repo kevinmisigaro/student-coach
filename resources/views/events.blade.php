@@ -7,7 +7,7 @@
         <br />
         <form action="" method="post">
             <div class="row mb-4">
-                <div class="col-md-4 mb-3"> 
+                <div class="col-md-4 mb-3">
                     <input type="date" class="form-control">
                     <br>
                     <button class="btn btn-primary">
@@ -22,7 +22,9 @@
             <div class="col-md-4 mb-3">
                 <a href="/event/{{ $event->id }}" style="text-decoration: none; color: black">
                     <div class="card" style="width:100%">
-                        <img src="{{ env('APP_URL') }}/{{ $event->image }}" style="max-width: 300px" class="card-img-top" alt="...">
+                        <div
+                            style="background-image: url('{{ env('APP_URL') }}/{{ $event->image }}'); background-size:cover; height: 200px; background-position:center center ">
+                        </div>
                         <div class="card-body">
                             <h5>
                                 <b>{{ $event->name }}</b>
