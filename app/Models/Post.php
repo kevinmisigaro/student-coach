@@ -24,4 +24,8 @@ class Post extends Model
     public function groups(){
         return $this->belongsToMany(Group::class);
     }
+
+    public function userLikes(){
+        return $this->belongsToMany(User::class,'post_likes','post_id','user_id')->withPivot('is_like');
+    }
 }

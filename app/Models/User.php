@@ -66,4 +66,8 @@ class User extends Authenticatable
     public function jobsApplied(){
         return $this->belongsToMany(Job::class,'applicants','user_id','job_id');
     }
+
+    public function likes(){
+        return $this->belongsToMany(Post::class,'post_likes','user_id','post_id');
+    }
 }

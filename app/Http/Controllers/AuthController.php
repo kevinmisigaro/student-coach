@@ -22,6 +22,12 @@ class AuthController extends Controller
             return back();
         }
 
+        $data = $request->all();
+            if (empty($data['mycheckbox'])) {
+                session()->flash('error', 'You have to accept our terms and conditions first');
+                return back();
+            }
+
         User::create([
             'name' => $request->name,
             'email' => $request->email,

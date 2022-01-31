@@ -72,6 +72,8 @@ Route::get('forum',[PostController::class, 'index']);
 Route::post('forum/create',[PostController::class,'store']);
 Route::get('post/{id}',[PostController::class,'post']);
 Route::post('post/comment/{id}',[PostController::class,'comment']);
+Route::get('post/like/{id}',[PostController::class,'like']);
+Route::get('post/dislike/{id}',[PostController::class,'dislike']);
 
 Route::prefix('group')->group(function(){
     Route::get('/',[GroupController::class,'index']);

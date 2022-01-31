@@ -101,10 +101,13 @@
                     <h4>
                         <i>
                             Our coaches are trailblazers who have 'been there <br> and done that' and achieved success
-                            in their academic <br> and professional careers. They will review your history, <br>
-                            education, strengths, problem areas, and goals and build <br> your roadmap to success.
+                            in their academic <br> and professional careers.
                         </i>
                     </h4>
+                    <br>
+                    <a href="/forum" class="btn btn-primary btn-lg px-5">
+                        Meet our coaches
+                    </a>
 
                 </div>
             </div>
@@ -254,24 +257,53 @@
     <div class="container">
 
         <div class="text-center">
-            <h3><b>Testimonial</b></h3>
+            <h3><b><u>Testimonial</u></b></h3>
             <br>
-            <img src="{{ asset('images/businessavatar.jpg') }}"
-                style="width: 100px; height: 100px; border:1px solid black" class='rounded-circle mb-2' alt='...' />
             <p>
-                John Doe
+                "I think it is a very important event and more people should participate. I guess people do not attach
+                value to unpaid events. I did not know what to expect but i'm glad I did. I also like that the coaches
+                were involved in the activities, doing exactly what they preach!"
             </p>
+            <img src="{{ asset('images/femaleavatar.png') }}"
+                style="width: 90px; height: 90px; border:1px solid black" class='rounded-circle mb-2' alt='...' />
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quidem illum, facilis autem, modi
-                commodi, totam culpa sint expedita tempora similique necessitatibus sapiente earum natus minima dolorum
-                blanditiis omnis vitae.
+                <b><i>Ada, participant at TSC career coaching workshop</i></b>
             </p>
         </div>
 
     </div>
 </div>
 
-<div class="container-fluid bg-success" style="padding: 80px 0 50px 0">
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex flex-row justify-content-start">
+                <i class="fa fa-phone" aria-hidden="true" style="font-size: 40pt"></i>
+                <div class="ms-5">
+                    <h4>
+                        Phone:
+                    </h4>
+                    <p>
+                        +255 782835136
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex flex-row justify-content-start">
+                <i class="fa fa-envelope" aria-hidden="true" style="font-size: 40pt"></i>
+                <div class="ms-5">
+                    <h4>
+                        Email:
+                    </h4>
+                    <p>
+                        ask@thestudentcoach.net
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="padding: 80px 0 50px 0; background: #710A3E">
     <div class="container pt-1 text-white">
 
         <div class="row mb-3">

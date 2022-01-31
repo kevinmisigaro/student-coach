@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Comment;
 use App\Models\Group;
+use App\Models\PostLike;
 
 class PostController extends Controller
 {
@@ -83,6 +84,34 @@ class PostController extends Controller
         ]);
 
         session()->flash('success','Post successfully added!');
+        return back();
+    }
+
+    public function like($id){
+        if (!Auth::check()) {
+            session()->flash('error', 'Please login first');
+            return back();
+        }
+
+        PostLike::updateOrCreate([
+            'post_id' => $id,
+            'user_id' => Auth::id()
+        ],['is_like' => true]);
+
+        return back();
+    }
+
+    public function dislike($id){
+        if (!Auth::check()) {
+            session()->flash('error', 'Please login first');
+            return back();
+        }
+
+        PostLike::updateOrCreate([
+            'post_id' => $id,
+            'user_id' => Auth::id(),      
+        ],['is_like' => false]);
+
         return back();
     }
 }

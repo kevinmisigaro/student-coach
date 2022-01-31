@@ -1,6 +1,13 @@
 @component('layouts.main')
 <div class="pt-5 container-fluid" style="background: #f5f5f5; height: 100vh">
+    
     <div class="container">
+        @if (session()->has('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ session('error') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <div class="d-flex row justify-content-center">
             <div class="card" style="width:30rem">
                 <div class="card-body">
@@ -37,9 +44,9 @@
                             </div>
                         </div>
                         <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" name="mycheckbox" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
-                              Read our terms of service
+                              <a href="/terms">Read our terms of service</a>
                             </label>
                           </div>
                         <div class="form-group mb-3 d-grid">

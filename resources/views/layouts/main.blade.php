@@ -17,6 +17,7 @@
         }
 
     </style>
+        <link rel="shortcut icon" href="{{ asset('images/fav.ico') }}" type="image/png" />
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/assets/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a href="/" class="navbar-brand">
-                <img src="{{ asset('images/coachlogo2.png') }}" style="max-width: 200px" alt="">
+                <img src="{{ asset('images/mainlogo.png') }}" style="max-width: 300px" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -96,17 +97,30 @@
 
     <div class='footer bg-dark py-3'>
         <div class="container">
-            <div class="d-flex flex-row justify-content-between">
+            <div class="row">
+               <div class="col-md-4">
                 <p class='text-white'>
                     Copyright &copy; Student Coach | {{ date("Y") }}
                 </p>
-                <div>
+               </div>
+               <div class="col-md-4 text-white">
+                <div class="d-flex flex-row justify-content-center">
+                    <i class="fa fa-facebook" aria-hidden="true" style="font-size:20px"></i>
+                <i class="fa fa-instagram ms-5" aria-hidden="true" style="font-size:20px"></i>
+                <i class="fa fa-twitter ms-5" aria-hidden="true" style="font-size:20px"></i>
+                <i class="fa fa-linkedin ms-5" aria-hidden="true" style="font-size:20px"></i>
+                </div>
+               </div>
+                <div class="col-md-4">
                     <a href="/terms" style="color: white; text-decoration:none">
                         Partner with us
-                    </a> <br>
-                    <a href="/terms" style="color: white; text-decoration:none">
+                    </a> 
+                    <a href="/terms" style="color: white; text-decoration:none" class="ms-5">
                         Terms of reference
-                    </a>
+                    </a><br/>
+                    {{-- <a href="/terms" style="color: white; text-decoration:none">
+                        Terms of coaches
+                    </a> --}}
                 </div>
             </div>
         </div>

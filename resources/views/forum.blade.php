@@ -16,6 +16,16 @@
         </div>
         @endif
 
+        <style>
+            .link{
+                color: #710A3E;
+                text-decoration: none
+            }
+            .link:hover{
+                text-decoration-line: underline;
+                color: #710A3E;
+            }
+        </style>
 
         <div class="row">
             <div class="col-md-9 mt-3">
@@ -64,38 +74,47 @@
                 @if (count($posts) > 0)
                 @foreach ($posts as $post)
                 <!--- card--->
-                <a href="/post/{{ $post->id }}" style="text-decoration: none; color: black">
-                   
-                <div class="card px-3 py-2 shadow mb-2" style="width: 90%;">
-                    <div class="card-body row">
-                        <div class="col-md-9">
-                            <div class="d-flex flex-row justify-content-start">
-                                <img src="{{ asset('images/businessavatar.jpg') }}" style="width: 60px; height: 60px; border: 1px solid black" class="rounded-circle">
-                                <div class="ms-4">
-                                    <h5>
-                                        <strong>{{ $post->title }}</strong>
-                                    </h5>
-                                    <p>
-                                        {{ \Illuminate\Support\Str::limit($post->body, 30, '...'); }}
-                                    </p>
+                
+
+                    <div class="card px-3 py-2 shadow mb-2" style="width: 90%;">
+                        <div class="card-body row">
+                            <div class="col-md-5">
+                                <div class="d-flex flex-row justify-content-start">
+                                    <div class="text-center">
+                                        <a href="/post/like/{{ $post->id }}">
+                                            <i class="fa fa-arrow-up" aria-hidden="true" style="color:black"></i>
+                                        </a>
+                                        <br>
+                                        {{ count(\App\Models\PostLike::where(['post_id' => $post->id, 'is_like' => true])->get()) }}
+                                        <br>
+                                        <a href="/post/dislike/{{ $post->id }}" style="color:black">
+                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                    <div class="ms-4">
+                                        <a href="/post/{{ $post->id }}" class="link">
+                                            <strong>{{ $post->title }}</strong> <br>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <small>{{ $post->created_at->diffForHumans() }}</small>
-                            <br><br>
-                            <p>
-                                @if (isset($post->comments))
-                                {{ count($post->comments) }} comments
-                                @else
-                                0 comments
-                                @endif
-                            </p>
-                            
+                            <div class="col-md-4">
+                                <small>by {{ $post->user->name }}</small> <br>
+                                <small>{{ $post->created_at->diffForHumans() }}</small>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <p>
+                                    @if (isset($post->comments))
+                                    {{ count($post->comments) }} comments
+                                    @else
+                                    0 comments
+                                    @endif
+                                </p>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                </a>
+                
                 <!--- card--->
                 @endforeach
                 @else

@@ -21,8 +21,8 @@
                 <div class="col-md-6">
                     <img src="{{ env('APP_URL') }}/{{ $event->image }}" class="img-fluid" alt="...">
                     <i class="fa fa-facebook" aria-hidden="true"></i>
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-instagram ms-2" aria-hidden="true"></i>
+                    <i class="fa fa-whatsapp ms-2" aria-hidden="true"></i>
                 </div>
                 <div class="col-md-6 p-4">
                     {{ \Carbon\Carbon::parse($event->event_date)->format('l, jS, F,y'); }}

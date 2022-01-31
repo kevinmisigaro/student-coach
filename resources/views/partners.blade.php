@@ -4,7 +4,8 @@
 
         <p>
             We offer a range of 1:1 coaching and group coaching to help you achieve your academic, professional and
-            career goals at home or abroad.
+            career goals at home or abroad.They will review your history,
+            education, strengths, problem areas, and goals and build your roadmap to success.
         </p>
 
         <p>
@@ -53,7 +54,7 @@
         <br>
 
         <h3>
-            Counsellors
+            Coaches
         </h3>
 
         <div class='row'>
