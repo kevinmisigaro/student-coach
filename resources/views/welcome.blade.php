@@ -105,7 +105,7 @@
                         </i>
                     </h4>
                     <br>
-                    <a href="/forum" class="btn btn-primary btn-lg px-5">
+                    <a href="/partner" class="btn btn-primary btn-lg px-5">
                         Meet our coaches
                     </a>
 

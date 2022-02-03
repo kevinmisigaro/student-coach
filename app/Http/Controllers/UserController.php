@@ -29,4 +29,9 @@ class UserController extends Controller
         session()->flash('success','User deleted successfully');
         return back();
     }
+
+    public function userProfile($id){
+        $user = User::find($id);
+        return view('userprofile',compact('user'));
+    }
 }

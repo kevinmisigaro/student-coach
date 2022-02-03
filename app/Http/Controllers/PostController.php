@@ -13,7 +13,7 @@ use App\Models\PostLike;
 class PostController extends Controller
 {
     public function index(){
-        $posts = Post::get();
+        $posts = Post::simplePaginate(10);
         $groups = Group::get();
         return view('forum', \compact('posts','groups'));
     }
@@ -41,6 +41,31 @@ class PostController extends Controller
         Comment::create([
             'user_id' => Auth::id(),
             'post_id' => $id,
+            'message' => $request->comment
+        ]);
+
+        return \redirect()->back();
+    }
+
+    public function reply(Request $request,$postID,$commentID){
+        if (!Auth::check()) {
+            session()->flash('error', 'Please login first');
+            return back();
+        }
+
+        $validator = Validator::make($request->all(), [
+            'comment' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            session()->flash('error','Please enter reply.');
+            return back();
+        }
+
+        Comment::create([
+            'user_id' => Auth::id(),
+            'post_id' => $postID,
+            'parent_id' => $commentID,
             'message' => $request->comment
         ]);
 

@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             CountrySeeder::class,
             AdminSeeder::class,
             // StudentSeeder::class,
-            CoachSeeder::class,
+            // CoachSeeder::class,
             // UniversitySeeder::class,
             GroupSeeder::class
         ]);

@@ -17,8 +17,8 @@
                 <form method="POST" action="/login">
                     @csrf
                     <div class="form-group mb-3">
-                        <label>Email</label>
-                        <input type="text" name="email" class="form-control" />
+                        <label>Username</label>
+                        <input type="text" name="username" class="form-control" />
                     </div>
                     <div class="form-group mb-5">
                         <label>Password</label>

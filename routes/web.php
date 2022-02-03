@@ -13,6 +13,7 @@ use App\Http\Controllers\GroupController;
 use App\Http\Livewire\ChatRoom;
 use App\Http\Livewire\CoachChatRoom;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,14 +73,20 @@ Route::get('forum',[PostController::class, 'index']);
 Route::post('forum/create',[PostController::class,'store']);
 Route::get('post/{id}',[PostController::class,'post']);
 Route::post('post/comment/{id}',[PostController::class,'comment']);
+Route::post('post/comment/{postID}/{commentID}',[PostController::class,'reply']);
 Route::get('post/like/{id}',[PostController::class,'like']);
 Route::get('post/dislike/{id}',[PostController::class,'dislike']);
+Route::get('userprofile/{id}',[UserController::class,'userProfile']);
 
 Route::prefix('group')->group(function(){
     Route::get('/',[GroupController::class,'index']);
     Route::post('store',[GroupController::class,'store']);
     Route::get('singlegroup/{id}',[GroupController::class,'display']);
     Route::post('post/{id}',[GroupController::class,'post']);
+});
+
+Route::get('forumtest', function(){
+    return view('forumtest');
 });
 
 Route::get('events', [EventController::class,'index']);

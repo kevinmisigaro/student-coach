@@ -1,15 +1,15 @@
 @component('layouts.main')
 <div class="pt-5 container-fluid" style="background: #f5f5f5; height: 100vh">
-    
+
     <div class="container">
         @if (session()->has('error'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          {{ session('error') }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
         <div class="d-flex row justify-content-center">
-            <div class="card" style="width:30rem">
+            <div class="card" style="width:60rem">
                 <div class="card-body">
                     <h4>
                         Register
@@ -17,23 +17,27 @@
                     <br />
                     <form action="/register" method="POST">
                         @csrf
-                        <div class="form-group mb-3" style="text-align:left">
-                            <label>Full name</label>
-                            <input type="text" name="name" class="form-control" />
+                        <div class="row">
+                            <div class="col mb-3" style="text-align:left">
+                                <label>Full name</label>
+                                <input type="text" name="name" class="form-control" />
+                            </div>
+                            <div class="col mb-3" style="text-align:left">
+                                <label>Username</label>
+                                <input type="text" name="username" class="form-control" />
+                            </div>
                         </div>
-                        <div class="form-group mb-3" style="text-align:left">
-                            <label>Email</label>
-                            <input type="text" name="email" class="form-control" />
+                        <div class="row">
+                            <div class="col mb-3" style="text-align:left">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" />
+                            </div>
+                            <div class="col mb-3" style="text-align:left">
+                                <label>Phone</label>
+                                <input type="text" name="phone" placeholder="+234..." class="form-control" />
+                            </div>
                         </div>
-                        <div class="form-group mb-3" style="text-align:left">
-                            <label>Password</label>
-                            <input type="password" name="password" class="form-control" />
-                        </div>
-                        <div class="form-group mb-3" style="text-align:left">
-                            <label>Confirm Password</label>
-                            <input type="password" name="confirm" class="form-control" />
-                        </div>
-                        <div class="row mb-1">
+                        <div class="row">
                             <div class="col-md-6 mb-3 col-sm-12">
                                 <label for="">City</label>
                                 <input type="text" name="city" class="form-control">
@@ -43,12 +47,105 @@
                                 <input type="text" name="country" class="form-control">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col mb-3" style="text-align:left">
+                                <label>Password</label>
+                                <input type="password" name="password" class="form-control" />
+                            </div>
+                            <div class="col mb-3" style="text-align:left">
+                                <label>Confirm Password</label>
+                                <input type="password" name="confirm" class="form-control" />
+                            </div>
+                        </div>
+
                         <div class="form-check mb-3">
                             <input class="form-check-input" type="checkbox" name="mycheckbox" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
-                              <a href="/terms">Read our terms of service</a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Read our terms of
+                                    service</a>
                             </label>
-                          </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ad nihil
+                                        doloribus ratione maxime, vitae quae sed corrupti voluptas necessitatibus
+                                        aliquam accusantium unde? Aliquid, neque necessitatibus? Nihil perferendis
+                                        accusamus quae?
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group mb-3 d-grid">
                             <button type="submit" class="btn btn-success">
                                 Register
