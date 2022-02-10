@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Follower;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -34,4 +36,38 @@ class UserController extends Controller
         $user = User::find($id);
         return view('userprofile',compact('user'));
     }
+
+    public function showFollowers(){
+        $followersList = \App\Models\Follower::where('user_id', \Illuminate\Support\Facades\Auth::id())->get();
+        return view('dashboard.followers', compact('followersList'));
+    }
+
+    public function follow($userID){
+        if (!Auth::check()) {
+            session()->flash('error', 'Please login first');
+            return back();
+        }
+
+        $checkIfUserIsFollowed = Follower::where([
+            'user_id' => $userID,
+            'follower_id' => Auth::id()
+        ])->exists();
+
+        if(!$checkIfUserIsFollowed){
+
+            Follower::create([
+                'user_id' => $userID,
+                'follower_id' => Auth::id()
+            ]);
+
+        } else{
+            Follower::where([
+                'user_id' => $userID,
+                'follower_id' => Auth::id()
+            ])->delete();
+        }
+
+        return back();
+    }
+
 }

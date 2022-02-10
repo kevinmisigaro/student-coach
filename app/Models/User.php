@@ -60,7 +60,7 @@ class User extends Authenticatable
     }
 
     public function groups(){
-        return $this->belongsToMany(Group::class);
+        return $this->belongsToMany(Group::class,'group_user','user_id','group_id');
     }
 
     public function events(){
@@ -73,5 +73,17 @@ class User extends Authenticatable
 
     public function likes(){
         return $this->belongsToMany(Post::class,'post_likes','user_id','post_id');
+    }
+
+    public function followers(){
+        return $this->hasMany(Follower::class);
+    }
+
+    public function isFollowing(){
+        return $this->hasMany(Follower::class,'follower_id','id');
+    }
+
+    public function commentsLiked(){
+        return $this->belongsToMany(Comment::class,'comment_likes','user_id','comment_id');
     }
 }

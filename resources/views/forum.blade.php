@@ -136,7 +136,7 @@ a {
                             <div class="col-4 text-muted">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-4">Replies</div>
-                                    <div class="col-8">Last update</div>
+            
                                 </div>
                             </div>
                         </div>
@@ -145,7 +145,19 @@ a {
                     @foreach ($posts as $post)
                     <div class="card-body py-3">
                         <div class="row no-gutters align-items-center">
-                            <div class="col"><a href="/post/{{ $post->id }}" class="text-big" data-abc="true">{{ $post->title }}</a>
+                            <div class="col-1 text-center">
+                                <a href="/post/like/{{ $post->id }}">
+                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 
+                                </a>
+                                <br>
+                                {{ \App\Models\PostLike::where(['post_id' => $post->id, 'is_like' => true])->count() }}
+                                <br>
+                                <a href="/post/dislike/{{ $post->id }}">
+                                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="/post/{{ $post->id }}" class="text-big" data-abc="true">{{ $post->title }}</a>
                                 <div class="text-muted small mt-1">Started {{ $post->created_at->diffForHumans() }} &nbsp;·&nbsp; <a href="/userprofile/{{ $post->user->id }}" class="text-muted" data-abc="true">{{ $post->user->username }}</a></div>
                             </div>
                             <div class="d-none d-md-block col-4">
@@ -153,19 +165,7 @@ a {
                                     <div class="col-4">
                                         {{ isset($post->comments) ? count($post->comments) : 0 }}
                                     </div>
-                                    <div class="media col-8 align-items-center"> 
-                                        @if (isset($post->comments))
-                                        <img src="{{ asset('images/businessavatar.jpg') }}" alt="profile" style="border: 1px solid black" class="d-block ui-w-30 rounded-circle">
-                                        <div class="media-body flex-truncate ml-2">
-                                            <div class="line-height-1 text-truncate">
-                                                <small>{{ $post->created_at->format('d/m/y') }}</small>
-                                            </div> 
-                                            <a href="/userprofile/{{ $post->user->id }}" class="text-muted small text-truncate" data-abc="true">
-                                                by {{ $post->user->username }}
-                                            </a>
-                                        </div>
-                                        @endif
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -181,24 +181,18 @@ a {
                     @endif
                     
                 </div>
-                {{-- <nav>
-                    <ul class="pagination mb-5">
-                        <li class="page-item disabled"><a class="page-link" href="javascript:void(0)" data-abc="true">«</a></li>
-                        <li class="page-item active"><a class="page-link" href="javascript:void(0)" data-abc="true">1</a></li>
-                        <li class="page-item"><a class="page-link" href="javascript:void(0)" data-abc="true">2</a></li>
-                        <li class="page-item"><a class="page-link" href="javascript:void(0)" data-abc="true">3</a></li>
-                        <li class="page-item"><a class="page-link" href="javascript:void(0)" data-abc="true">»</a></li>
-                    </ul>
-                </nav> --}}
 
                 {{ $posts->links() }}
+
+                <br><br>
+                
            </div>
             <div class="col-md-3">
                 <div class="card" style="width: 100%">
                     <div class="card-body">
                         <u><b>Trending topics</b></u>
-                        @if (count($posts) > 0)
-                        @foreach ($posts as $post)
+                        @if (count(\App\Models\Post::get()) > 0)
+                        @foreach (\App\Models\Post::take(3)->get() as $post)
                             <div class="pos-relative py-2">
                                 <h6 class="text-primary text-sm">
                                   <a href="/post/{{ $post->id }}" class="text-primary"> 
@@ -214,15 +208,13 @@ a {
                         @endif
                           
                         @if (count($groups) > 0)
-                        <u><b>Top groups:</b></u>
+                        <u><b>Groups:</b></u>
                         <br>
-                        <ul>
-                            @foreach ($groups as $group)
-                            <li>
-                                <a href="/group/singlegroup/{{ $group->id }}">{{ $group->name }}</a>
-                            </li>
-                            @endforeach
-                        </ul>
+                        @foreach ($groups as $group)
+                        <div>
+                            <i class="fa {{ $group->icon }}" aria-hidden="true"></i>  <a href="/group/singlegroup/{{ $group->id }}">{{ $group->name }}</a>
+                        </div>
+                        @endforeach
                         @else
                         <div class="alert alert-info mt-2 text-center" role="alert">
                             No groups

@@ -71,7 +71,18 @@
             <span>Consultations</span>
         </a>
     </li>
-
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard/mybookings">
+            <i class="far fa-fw fa-address-card"></i>
+            <span>My bookings</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard/mygroups">
+            <i class="far fa-fw fa-address-card"></i>
+            <span>My groups</span>
+        </a>
+    </li>
     @endif
 
     @if (\Illuminate\Support\Facades\Auth::user()->role == 3)

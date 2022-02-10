@@ -61,7 +61,7 @@
                         <div class="form-check mb-3">
                             <input class="form-check-input" type="checkbox" name="mycheckbox" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Read our terms of
+                                <a href="/terms">Read our terms of
                                     service</a>
                             </label>
                         </div>
@@ -72,7 +72,7 @@
                             <div class="modal-dialog modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Terms of service</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>

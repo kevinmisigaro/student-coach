@@ -77,12 +77,14 @@ Route::post('post/comment/{postID}/{commentID}',[PostController::class,'reply'])
 Route::get('post/like/{id}',[PostController::class,'like']);
 Route::get('post/dislike/{id}',[PostController::class,'dislike']);
 Route::get('userprofile/{id}',[UserController::class,'userProfile']);
+Route::get('like/comment/{commentID}',[PostController::class,'likeComment']);
 
 Route::prefix('group')->group(function(){
     Route::get('/',[GroupController::class,'index']);
     Route::post('store',[GroupController::class,'store']);
     Route::get('singlegroup/{id}',[GroupController::class,'display']);
     Route::post('post/{id}',[GroupController::class,'post']);
+    Route::get('follow/{id}',[GroupController::class,'membershipRequest']);
 });
 
 Route::get('forumtest', function(){
@@ -92,6 +94,8 @@ Route::get('forumtest', function(){
 Route::get('events', [EventController::class,'index']);
 Route::get('event/{id}',[EventController::class,'show']);
 Route::get('event/attend/{id}',[EventController::class,'attend']);
+
+Route::get('follow/{userID}',[UserController::class,'follow']);
 
 Route::get('terms', function(){
     return view('terms');
@@ -110,6 +114,25 @@ Route::prefix('dashboard')->group(function () {
 
     Route::post('job/store',[JobController::class,'store']);
     Route::get('job/delete/{id}',[JobController::class,'destroy']);
+
+    Route::get('profile', [AuthController::class,'profile']);
+    Route::post('profile/update', [AuthController::class,'updateUserDetails']);
+
+    Route::get('mybookings', function(){
+        return view('dashboard.userbookings');
+    });
+
+    Route::get('mygroups', function(){
+        return view('dashboard.mygroups');
+    });
+
+    Route::get('followers', function(){
+        return view('dashboard.followers');
+    });
+
+    Route::get('following', function(){
+        return view('dashboard.following');
+    });
 
     Route::prefix('events')->group(function(){
         Route::get('/', function(){

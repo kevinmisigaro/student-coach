@@ -75,7 +75,26 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jobs applied
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Events booked
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                               {{ \App\Models\EventAttendee::where('user_id', \Illuminate\Support\Facades\Auth::id())->count() }}
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-address-card fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Groups joined
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                0
@@ -84,6 +103,54 @@
                         <div class="col-auto">
                             <i class="far fa-address-card fa-2x text-gray-300"></i>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Following
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                               {{ \App\Models\Follower::where('follower_id', \Illuminate\Support\Facades\Auth::id())->count() }}
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-address-card fa-2x text-gray-300"></i>
+                        </div>
+                        @if (\App\Models\Follower::where('follower_id', \Illuminate\Support\Facades\Auth::id())->count() > 0)
+                        <div class="col-12">
+                            <a href="/dashboard/following">View</a>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Followers
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                               {{ \App\Models\Follower::where('user_id', \Illuminate\Support\Facades\Auth::id())->count() }}
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="far fa-address-card fa-2x text-gray-300"></i>
+                        </div>
+                        @if (\App\Models\Follower::where('user_id', \Illuminate\Support\Facades\Auth::id())->count() > 0)
+                        <div class="col-12 ml-auto">
+                            <a href="/dashboard/followers">View</a>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

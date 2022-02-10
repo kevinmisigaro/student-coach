@@ -28,12 +28,26 @@ class GroupController extends Controller
             return back();
         }
 
-        GroupMember::firstOrCreate([
+        $checkIfGroupMember= GroupMember::where([
             'group_id' => $id, 'user_id' => Auth::id()
-        ]);
+        ])->exists();
 
-        session()->flash('success','You are now a member of '.Group::where('id',$id)->pluck('name')->first());
-        return back();
+        if(!$checkIfGroupMember){
+            GroupMember::create([
+                'group_id' => $id, 'user_id' => Auth::id()
+            ]);
+
+            session()->flash('success','You are now a member of '.Group::where('id',$id)->pluck('name')->first());
+            return back();
+        } else{
+            GroupMember::where([
+                'group_id' => $id, 'user_id' => Auth::id()
+            ])->delete();
+
+            session()->flash('success','You are no longer a member of '.Group::where('id',$id)->pluck('name')->first());
+            return back();
+        }
+
     }
 
     public function post(Request $request,$id){

@@ -67,7 +67,8 @@
                         <div class="d-flex flex-row justify-content-between" style="width: 100%">
                             <div class="d-flex flex-row justify-content-start">
 
-                                <div class="media-body ms-3"> <a href="/userprofile/{{ $post->user->id }}" data-abc="true">
+                                <div class="media-body ms-3"> <a href="/userprofile/{{ $post->user->id }}"
+                                        data-abc="true">
                                         {{ $post->user->username }}
                                     </a>
                                     <div class="text-muted small">
@@ -83,6 +84,10 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        @if (isset($post->image))
+                        <img src="{{env('APP_URL')}}/{{ $post->image }}" style="max-width: 40rem" alt="...">
+                        @endif
+
                         <p>
                             {{ $post->body }}
                         </p>
@@ -96,7 +101,7 @@
                         </div>
                         <div class="px-4 pt-3">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#commentModal"
-                                class="btn btn-primary"><i class="ion ion-md-create"></i>&nbsp; Reply</button>
+                                class="btn btn-primary"><i class="ion ion-md-create"></i>&nbsp; Comment</button>
                         </div>
                     </div>
                 </div>
@@ -144,20 +149,27 @@
                             <div class="col">
 
                                 @if (isset($post->comments))
-                                @foreach (\App\Models\Comment::where('post_id', $post->id)->whereNull('parent_id')->with('replies')->get() as
-                                $comment)
+                                @foreach (
+                                \App\Models\Comment::where(
+                                'post_id',$post->id)->whereNull('parent_id')
+                                ->with('replies')->get() as $comment
+                                )
                                 <div class="d-flex flex-start mb-4">
+                                    
                                     <img class="rounded-circle shadow-1-strong me-3"
-                                        src="{{ asset('images/businessavatar.jpg') }}" alt="avatar"
-                                        width="40" height="40" />
+                                        src="{{ asset('images/businessavatar.jpg') }}" style="border: 1px solid black" alt="avatar" width="40"
+                                        height="40" /> 
                                     <div class="flex-grow-1 flex-shrink-1">
-                                        <div> 
-                                            <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="d-flex justify-content-start align-items-center">
                                                 <p class="mb-1">
-                                                    <a href="/userprofile/{{ $comment->user->id }}">{{ $comment->user->username }}</a> <span class="small">-
+                                                    <a
+                                                        href="/userprofile/{{ $comment->user->id }}">{{ $comment->user->username }}</a>
+                                                    <span class="small">-
                                                         {{ $comment->created_at->diffForHumans() }}</span>
                                                 </p>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#replyModal">
+                                                <a href="#" class="ms-4" data-bs-toggle="modal"
+                                                    data-bs-target="#reply-{{ $comment->id }}-Modal">
                                                     <i class="fa fa-reply fa-xs"></i>
                                                     <span class="small">reply</span>
                                                 </a>
@@ -165,10 +177,23 @@
                                             <p class="small mb-0">
                                                 {{ $comment->message }}
                                             </p>
+                                            <div class="d-flex flex-row flex-start">
+                                                <a href="/like/comment/{{ $comment->id }}">
+                                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 
+                                                </a>
+                                                <div class="ms-3">
+                                                    {{ \App\Models\CommentLike::where([
+                                                        'comment_id' => $comment->id
+                                                    ])->count() }}
+                                                </div>
+                                                <a href="/like/comment/{{ $comment->id }}" class="ms-3">
+                                                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> 
+                                                </a>
+                                            </div>
                                         </div>
 
                                         <!-- Modal -->
-                                        <div class="modal fade" id="replyModal" tabindex="-1"
+                                        <div class="modal fade" id="reply-{{ $comment->id }}-Modal" tabindex="-1"
                                             aria-labelledby="replyModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
@@ -183,7 +208,7 @@
                                                             @csrf
                                                             <div class="form-group mb-2">
                                                                 <textarea name="comment" cols="100%" rows="5"
-                                                                    placeholder="Enter comment..."
+                                                                    placeholder="Enter comment...."
                                                                     class="form-control"></textarea>
                                                             </div>
                                                             <div class="form-group mb-3">
@@ -203,15 +228,25 @@
                                         <div class="d-flex flex-start mt-4">
                                             <a class="me-3" href="#">
                                                 <img class="rounded-circle shadow-1-strong"
-                                                    src="{{ asset('images/businessavatar.jpg') }}"
-                                                    alt="avatar" width="40" height="40" />
+                                                    src="{{ asset('images/businessavatar.jpg') }}" 
+                                                    style="border: 1px solid black" alt="avatar"
+                                                    width="40" height="40" />
                                             </a>
                                             <div class="flex-grow-1 flex-shrink-1">
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center">
-                                                        <p class="mb-1"> 
-                                                            <a href="/userprofile/{{ $rep1->user->id }}">{{ $rep1->user->username }}</a> <span class="small">-
-                                                                {{ $rep1->created_at->diffForHumans() }}</span>
+                                                        <p class="mb-1">
+                                                            <a href="/userprofile/{{ $rep1->user->id }}">{{ $rep1->user->username }}
+                                                            </a>
+
+                                                            @if ($rep1->parent_id != $comment->id )
+                                                            <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                                            $rep1->parentComment->user->username
+                                                            @endif
+
+                                                            <span class="small">-
+                                                                {{ $rep1->created_at->diffForHumans() }}
+                                                            </span>
                                                         </p>
                                                     </div>
                                                     <p class="small mb-0">

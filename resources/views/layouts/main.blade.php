@@ -139,7 +139,6 @@
             });
         });
     </script>
-
     @livewireScripts
 </body>
 

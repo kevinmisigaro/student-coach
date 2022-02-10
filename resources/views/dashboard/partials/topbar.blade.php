@@ -40,13 +40,23 @@
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                     {{ \Illuminate\Support\Facades\Auth::user()->name }}
                 </span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                @if (\Illuminate\Support\Facades\Auth::user()->avatar == null)
+                    <img class="img-profile rounded-circle" src="{{ asset('images/businessavatar.jpg') }}">
+                @else
+                    <img class="img-profile rounded-circle" src="{{ env('APP_URL') }}/{{ \Illuminate\Support\Facades\Auth::user()->avatar }}">
+                @endif
+                
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="/">
-                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Home page
+                    <i class="fas fa-home fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Website
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/dashboard/profile">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

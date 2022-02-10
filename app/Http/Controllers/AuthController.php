@@ -10,6 +10,30 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    public function updateUserDetails(Request $request){
+        $user = User::where('id', $request->id)->first();
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'city' => $request->city,
+            'country' => $request->country,
+            'bio' => $request->bio
+        ]);
+
+        if($request->hasFile('image')){
+            $image = $request->file('image')->store('profile', 'public');
+            
+            $user->update([
+                'avatar' => "images/$image"
+            ]);
+        }
+
+        session()->flash('success', 'Details updated');
+        return back();
+    }
+
     public function registerStudent(Request $request){
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -52,6 +76,11 @@ class AuthController extends Controller
 
         session()->flash('error', 'Registration failed.');
         return back();
+    }
+
+    public function profile(){
+        $user = User::where('id', Auth::id())->first();
+        return view('dashboard.userprofile', \compact('user'));
     }
 
     public function login(Request $request){

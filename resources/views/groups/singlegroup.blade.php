@@ -1,4 +1,21 @@
 @component('layouts.main')
+<style>
+        .followoutlinebtn {
+        border: #741342 1px solid;
+        color: #741342
+    }
+
+    .followbtn:hover {
+        background: #741342;
+        color: white
+    }
+
+    .followoutlinebtn:hover {
+        background: #741342;
+        color: white;
+        border: 1px solid #741342
+    }
+</style>
 <div class="container-fluid" style="background:#f2f7f9;">
     <div class="container">
 
@@ -120,9 +137,18 @@
                         Members: {{ count($group->members) }}
                         <br>
                         <hr>
-                        {{-- <button class="btn btn-primary">
-                            Be a member
-                        </button> --}}
+                        @if (! \App\Models\GroupMember::where([
+                            'group_id' => $group->id,
+                            'user_id' => \Illuminate\Support\Facades\Auth::id()
+                        ])->exists())
+                            <a class="btn btn-primary btn-sm followbtn" href="/group/follow/{{ $group->id }}">
+                                Join group <i class="fa fa-plus" aria-hidden="true"></i>
+                            </a>
+                        @else 
+                        <a href="/group/follow/{{ $group->id }}" class="btn btn-outline-primary btn-sm followoutlinebtn">
+                            Exit group
+                        </a>
+                        @endif
                     </div>
                 </div>
             </div>
