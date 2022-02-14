@@ -83,6 +83,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label for="">Status</label>
+                                            <input type="text" class="form-control" name="status" value="{{ $user->status }}">
+                                        </div>
+                                        <div class="form-group">
                                             <label for="">Bio</label>
                                             <textarea cols="100%" rows="5" name="bio" class="form-control">
                                             {{ $user->bio }}
@@ -127,6 +131,10 @@
                                 <label for="">Country</label>
                                 <input type="text" value="{{ $user->country }}" class="form-control" disabled>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Status</label>
+                            <input type="text" class="form-control" value="{{ $user->status }}" disabled>
                         </div>
                         <div class="form-group">
                             <label for="">Bio</label>

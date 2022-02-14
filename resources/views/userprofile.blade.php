@@ -184,14 +184,25 @@
             <div class="card" style="width: 100%">
                 <div style="background: #741342; height: 90px"></div>
                 <div class="text-center">
+                    @if ($user->avatar == null)
                     <img src="{{ asset('images/businessavatar.jpg') }}" alt="profile"
                         style="border: 1px solid black;margin-top: -60px" width="100" height="100"
                         class="rounded-circle">
+                    @else
+                    <img src="{{ env('APP_URL') }}/{{ $user->avatar }}" alt="profile"
+                        style="border: 1px solid black;margin-top: -60px" width="100" height="100"
+                        class="rounded-circle">
+                    @endif
                 </div>
 
                 <div class="card-body text-center">
                     <h4><u>{{ $user->username }}</u></h4>
                     <small><b>Member since:</b> {{ $user->created_at->diffForHumans() }}</small> <br>
+                    @if ($user->status !== null)
+                    <small>
+                        <b>Status:</b> {{ $user->status }}
+                    </small> <br>
+                    @endif
                     <small>
                         {{ $user->city }}, {{ $user->country }}
                     </small> <br><br>

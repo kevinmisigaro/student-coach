@@ -63,6 +63,12 @@ Route::get('login', function(){
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'registerStudent']);
 
+Route::get('register/coach',function(){
+    return view('coachRegister');
+});
+
+Route::post('register/coach',[AuthController::class,'registerCoach']);
+
 Route::get('logout',[AuthController::class,'logout']);
 
 Route::get('beginSession/{coachID}',[ChatController::class,'chat']);

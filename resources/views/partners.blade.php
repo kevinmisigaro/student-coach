@@ -65,9 +65,16 @@
                     <div class='card' style="width: 100%">
 
                         <div class='card-body text-center'>
-                            <img src="{{ asset('images/businessavatar.jpg') }}"
+                            
+                            @if ($coach->avatar == null)
+                                <img src="{{ asset('images/businessavatar.jpg') }}"
                                 style="width: 150px; height: 150px; border:1px solid black" class='rounded-circle mb-2'
                                 alt='...' />
+                            @else
+                                <img src="{{ env('APP_URL') }}/{{ $coach->avatar }}"
+                                style="width: 150px; height: 150px; border:1px solid black" class='rounded-circle mb-2'
+                                alt='...' /> 
+                            @endif
 
                             <h4>
                                 <strong>

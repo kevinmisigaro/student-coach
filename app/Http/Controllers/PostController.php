@@ -113,7 +113,7 @@ class PostController extends Controller
         }
 
         if($request->hasFile('image')){
-            $filename = time().'.'.$request->image->getClientOriginalExtension();
+            // $filename = time().'.'.$request->image->getClientOriginalExtension();
             // $request->image->move(public_path('images/forum'), $filename);
             $image = $request->file('image')->store('forum', 'public');
 

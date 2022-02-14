@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        @if (isset($post->image))
+                        @if ($post->image !== null)
                         <img src="{{env('APP_URL')}}/{{ $post->image }}" style="max-width: 40rem" alt="...">
                         @endif
 
@@ -155,10 +155,17 @@
                                 ->with('replies')->get() as $comment
                                 )
                                 <div class="d-flex flex-start mb-4">
-                                    
+
+                                    @if ($comment->user->avatar == null)
                                     <img class="rounded-circle shadow-1-strong me-3"
-                                        src="{{ asset('images/businessavatar.jpg') }}" style="border: 1px solid black" alt="avatar" width="40"
-                                        height="40" /> 
+                                        src="{{ asset('images/businessavatar.jpg') }}" style="border: 1px solid black"
+                                        alt="avatar" width="40" height="40" />
+                                    @else
+                                    <img class="rounded-circle shadow-1-strong me-3"
+                                        src="{{ env('APP_URL') }}/{{ $comment->user->avatar }}"
+                                        style="border: 1px solid black" alt="avatar" width="40" height="40" />
+                                    @endif
+
                                     <div class="flex-grow-1 flex-shrink-1">
                                         <div>
                                             <div class="d-flex justify-content-start align-items-center">
@@ -179,7 +186,7 @@
                                             </p>
                                             <div class="d-flex flex-row flex-start">
                                                 <a href="/like/comment/{{ $comment->id }}">
-                                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 
+                                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                                                 </a>
                                                 <div class="ms-3">
                                                     {{ \App\Models\CommentLike::where([
@@ -187,7 +194,7 @@
                                                     ])->count() }}
                                                 </div>
                                                 <a href="/like/comment/{{ $comment->id }}" class="ms-3">
-                                                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> 
+                                                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -227,10 +234,17 @@
                                         @foreach($comment->replies as $rep1)
                                         <div class="d-flex flex-start mt-4">
                                             <a class="me-3" href="#">
+                                                @if ($comment->user->avatar == null)
                                                 <img class="rounded-circle shadow-1-strong"
-                                                    src="{{ asset('images/businessavatar.jpg') }}" 
-                                                    style="border: 1px solid black" alt="avatar"
-                                                    width="40" height="40" />
+                                                    src="{{ asset('images/businessavatar.jpg') }}"
+                                                    style="border: 1px solid black" alt="avatar" width="40"
+                                                    height="40" />
+                                                @else
+                                                <img class="rounded-circle shadow-1-strong"
+                                                    src="{{ env('APP_URL') }}/{{ $comment->user->avatar}}"
+                                                    style="border: 1px solid black" alt="avatar" width="40"
+                                                    height="40" />
+                                                @endif
                                             </a>
                                             <div class="flex-grow-1 flex-shrink-1">
                                                 <div>
@@ -241,7 +255,7 @@
 
                                                             @if ($rep1->parent_id != $comment->id )
                                                             <i class="fa fa-caret-right" aria-hidden="true"></i>
-                                                            $rep1->parentComment->user->username
+                                                            {{ $rep1->parentComment->user->username }}
                                                             @endif
 
                                                             <span class="small">-

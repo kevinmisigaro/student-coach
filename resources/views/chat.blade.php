@@ -14,7 +14,13 @@
     <div class="container">
         <div class="row my-5">
             <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 text-center">
-                <img src="{{ asset('images/businessavatar.jpg') }}" style="max-width: 150px" class="rounded-circle" alt="..." />
+                @if ($coach->avatar == null)
+                    <img src="{{ asset('images/businessavatar.jpg') }}" 
+                    style="max-width: 150px" class="rounded-circle" alt="..." />
+                @else
+                    <img src="{{ asset('images/businessavatar.jpg') }}" 
+                    style="max-width: 150px" class="rounded-circle" alt="..." />
+                @endif
                 <br /><br>
                 <p>
                     <strong>{{ $coach->name }}</strong> <br><br>

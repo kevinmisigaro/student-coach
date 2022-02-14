@@ -11,10 +11,21 @@
 
         <div class="row my-5">
             <div class="col-md-4 text-center">
-                <img src="{{ asset('images/businessavatar.jpg') }}" style="max-width: 200px; border: 1px solid black" class="rounded-circle" alt="..." />
+                @if ($coach->avatar == null)
+                <img src="{{ asset('images/businessavatar.jpg') }}" 
+                style="max-width: 200px; border: 1px solid black" 
+                class="rounded-circle" alt="..." /> 
+                @else
+                <img src="{{ env('APP_URL') }}/{{ $coach->avatar }}" 
+                style="max-width: 200px; border: 1px solid black" 
+                class="rounded-circle" alt="..." />
+                @endif
                 <br /><br>
                 <p>
                     {{ $coach->name }}
+                </p>
+                <p>
+                    {{ $coach->city }}, {{ $coach->country }}
                 </p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Start chat

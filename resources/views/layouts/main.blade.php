@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a href="/" class="navbar-brand">
-                <img src="{{ asset('images/mainlogo.png') }}" style="max-width: 300px" alt="">
+                <img src="{{ asset('images/logoimage.png') }}" style="max-width: 300px" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -112,7 +112,7 @@
                 </div>
                </div>
                 <div class="col-md-4">
-                    <a href="/terms" style="color: white; text-decoration:none">
+                    <a href="/register/coach" style="color: white; text-decoration:none">
                         Partner with us
                     </a> 
                     <a href="/terms" style="color: white; text-decoration:none" class="ms-5">

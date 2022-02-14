@@ -175,7 +175,7 @@
                         For many students, accessing relevant information for academic, study abroad and career success
                         can
                         often be
-                        confusing. Does this sound like you or someone
+                        confusing. Does this sound like you?
                         <br><br>
                         At the Student Coach, we believe in the power of peer-mentoring by connecting students,
                         graduates,
@@ -185,7 +185,7 @@
                         We are the premier learning and development community amplifying opportunities through curated,
                         interactive
                         communities and our dedicated coaching.
-                        <br>
+                        <br><br>
                         We’ve been there, done that and want to be part of your success story.
                     </p>
                 </div>
@@ -216,7 +216,7 @@
                     people.
                     Find your tribe, join or start a forum
                 </p>
-                <a href="/forum" class="btn btn-primary btn-sm">
+                <a href="/forum" class="btn btn-primary btn-sm mt-5">
                     View community
                 </a>
             </div>
@@ -241,10 +241,9 @@
                     Events
                 </h4>
                 <p>
-                    Sign up for our events to get insights on Postgraduate studies and how to get your student Visa
-                    without hassle, Access world class career advisory sessions.
+                    Sign up for our events to get insights on careers and overseas studies and access our world class visa advisory sessions.
                 </p>
-                <a href="/events" class="btn btn-primary btn-sm">
+                <a href="/events" class="btn btn-primary btn-sm mt-5">
                     View events
                 </a>
             </div>
@@ -276,8 +275,8 @@
 
 <div class="container-fluid py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 d-flex flex-row justify-content-start">
+        <div class="text-center">
+            {{-- <div class="col-md-6 d-flex flex-row justify-content-start">
                 <i class="fa fa-phone" aria-hidden="true" style="font-size: 40pt"></i>
                 <div class="ms-5">
                     <h4>
@@ -287,10 +286,10 @@
                         +255 782835136
                     </p>
                 </div>
-            </div>
-            <div class="col-md-6 d-flex flex-row justify-content-start">
+            </div> --}}
+            <div class="">
                 <i class="fa fa-envelope" aria-hidden="true" style="font-size: 40pt"></i>
-                <div class="ms-5">
+                <div class="mt-3">
                     <h4>
                         Email:
                     </h4>

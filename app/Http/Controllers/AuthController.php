@@ -7,10 +7,14 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegistrationConfirm;
+use App\Mail\RegistrationConfirmCoach;
 
 class AuthController extends Controller
 {
     public function updateUserDetails(Request $request){
+        
         $user = User::where('id', $request->id)->first();
 
         $user->update([
@@ -19,7 +23,8 @@ class AuthController extends Controller
             'phone' => $request->phone,
             'city' => $request->city,
             'country' => $request->country,
-            'bio' => $request->bio
+            'bio' => $request->bio,
+            'status' => $request->status
         ]);
 
         if($request->hasFile('image')){
@@ -31,6 +36,60 @@ class AuthController extends Controller
         }
 
         session()->flash('success', 'Details updated');
+        return back();
+    }
+
+    public function registerCoach(Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'bio' => 'required',
+            'expertise' => 'required',
+            'city' => 'required',
+            'country' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            session()->flash('error', 'Please enter all details');
+            return back();
+        }
+
+        $checkIfUsernameExists = User::where('username', $request->username)->exists();
+
+        if($checkIfUsernameExists){
+            session()->flash('error', 'This username already exists!');
+            return back();
+        }
+
+        $data = $request->all();
+
+        if (empty($data['mycheckbox'])) {
+            session()->flash('error', 'You have to accept our terms and conditions first');
+            return back();
+        }
+        
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'city' => $request->city,
+            'country' => $request->country,
+            'username' => $request->username,
+            'phone' => $request->phone,
+            'expertise' => $request->expertise,
+            'bio' => $request->bio,
+            'role' => 3
+        ]);
+
+        Mail::to($user->email)->send(new RegistrationConfirmCoach($user));
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return \redirect('/dashboard');
+        }
+
+        session()->flash('error', 'Registration failed.');
         return back();
     }
 
@@ -55,12 +114,13 @@ class AuthController extends Controller
         }
 
         $data = $request->all();
+
             if (empty($data['mycheckbox'])) {
                 session()->flash('error', 'You have to accept our terms and conditions first');
                 return back();
             }
 
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
@@ -69,6 +129,8 @@ class AuthController extends Controller
             'username' => $request->username,
             'phone' => $request->phone
         ]);
+
+        Mail::to($user->email)->send(new RegistrationConfirm($user));
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return \redirect('/dashboard');
