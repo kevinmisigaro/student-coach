@@ -18,7 +18,7 @@
                     <img src="{{ asset('images/businessavatar.jpg') }}" 
                     style="max-width: 150px" class="rounded-circle" alt="..." />
                 @else
-                    <img src="{{ asset('images/businessavatar.jpg') }}" 
+                    <img src="{{ env('APP_URL') }}/{{ $coach->avatar }}" 
                     style="max-width: 150px" class="rounded-circle" alt="..." />
                 @endif
                 <br /><br>

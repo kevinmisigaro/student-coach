@@ -11,7 +11,7 @@
 
 
             <div class="d-flex row justify-content-center my-5">
-                <div class="card" style="width:60rem">
+                <div class="card shadow" style="width:60rem">
                     <div class="card-body">
                         <div class="text-center">
                             <h4>

@@ -25,6 +25,9 @@
                     {{ $coach->name }}
                 </p>
                 <p>
+                    {{ $coach->expertise }}
+                </p>
+                <p>
                     {{ $coach->city }}, {{ $coach->country }}
                 </p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
